@@ -17,10 +17,9 @@ let lineCount: number = 6;
 let space: string = '';
 let character: string = '%';
 let line: string = '';
-let k: number;
 let line2: string = '';
 
-for (let k = 0; k <= lineCount; k++){
+for (let k: number = 0; k <= lineCount; k++){
     line += character ;
 };
 console.log(line);
@@ -37,8 +36,8 @@ for (let e: number = 1; e < lineCount; e++){
         for (let t: number = 1; t < lineCount - 5; t++){
             console.log(space, '%');
             space = space + ' ';
+            
     //kéne valami ami odateszi a végére a %-ot
-           
 };
 
 
