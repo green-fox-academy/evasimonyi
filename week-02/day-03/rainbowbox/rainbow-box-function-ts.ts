@@ -10,12 +10,12 @@ const ctx = canvas.getContext('2d');
 // Create a loop that fills the canvas with rainbow colored squares.
  
 let size : number = 30;
-let x = (canvas.width / 2) - (size / 2);
-let y = (canvas.height / 2) - (size / 2);
 let colour = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 let colourIndex = 0;
 
 function draw (size,colour){
+    let x = (canvas.width / 2) - (size / 2);
+    let y = (canvas.height / 2) - (size / 2);
     ctx.fillStyle = colour [colourIndex];
     ctx.fillRect(x, y, size, size);
     colourIndex = colourIndex + 1 ;
@@ -27,8 +27,8 @@ for (let i : number = 0; i < size; i++) {
     y = y + size;
 };
 
-for (let i : number = 0; i < size; i++) {
+/* for (let k : number = 0; k < size; i++) {
     draw(size, colour);
-    x = x - size;
-    y = y - size;
-};
+    x = x + size;
+    y = y + size;
+}; */

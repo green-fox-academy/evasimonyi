@@ -11,10 +11,10 @@ const ctx = canvas.getContext('2d');
 // Avoid code duplication.
 
 let size : number = 30;
-let x = (canvas.width / 2) - (size / 2);
-let y = (canvas.height / 2) - (size / 2);
 
 function draw (size){
+    let x = (canvas.width / 2) - (size / 2);
+    let y = (canvas.height / 2) - (size / 2);
     ctx.fillStyle = 'red';
     ctx.fillRect(x, y, size, size);
 };
