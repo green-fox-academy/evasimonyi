@@ -15,3 +15,5 @@ if (fs.existsSync('my-file.txt')){
 } else {
     throw Error ('Unable to read file: my-file.txt');
     }
+
+    
