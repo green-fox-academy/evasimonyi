@@ -23,3 +23,23 @@ let dominoes = initializeDominoes();
 /** eg: [2, 4], [4, 3], [3, 5] ... */
 
 print(dominoes);
+
+//homes.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+//var ascending = dominoes.sort((valueA, valueB) => Number(valueA) - Number(valueB));
+//console.log(ascending);
+
+dominoes.sort(function (a, b) {
+  return dominoes.this.valueA - valueB;
+});
+
+for (let i = 0; i < dominoes.length; i++){
+    dominoes[i] 
+    }
+}
+
+// expected output: Array ["Dec", "Feb", "Jan", "March"]
+
+/*var array1 = [1, 30, 4, 21];
+array1.sort();
+console.log(array1);
+// expected output: Array [1, 21, 30, 4] */

@@ -12,12 +12,15 @@ class Aircraft {
     }    
 
     fight(){
-        return this.base_damage * this.current_ammo;
-        return this.current_ammo -= this.current_ammo;
+        let currentDamage = this.base_damage * this.current_ammo;
+        this.current_ammo -= this.current_ammo;
+        return currentDamage;
     }
 
-    refill(number){
-        return this.current_ammo + number -(number - this.max_ammo);
+    refill(refillAmount){
+        let currentReffillResult = this.current_ammo + refillAmount - (refillAmount - this.max_ammo);
+        this.current_ammo = this.max_ammo;
+        return currentReffillResult;
         //10 a max ammo kapacitás, van benne már 2, megtöltjük 20-szal, 8 belemegy, marad 12
         // 2 + 20 - (20 - 10) = 12
     }
@@ -63,21 +66,26 @@ class Carrier {
                 throw "out of ammo"
             }         
             for (let i = 0; i <= this.aircrafts.length; i++) {
-                while (this.aircrafts[i].current_ammo < this.aircrafts[i].max_ammo && this.aircrafts[i].isPriority === true && this.storeOfAmmo > 0){ 
-                    return this.aircrafts[i].current_ammo ++;
-                    return this.storeOfAmmo --;
+                // whileok helyett meghívni a refillt, és amivel visszatér a refill, az alapján változtatni a store-t
+                
+                if ((this.aircrafts[i].current_ammo < this.aircrafts[i].max_ammo && this.aircrafts[i].isPriority === true && this.storeOfAmmo > 0)) {
+                    aircraft.refill()
+                }
+                /*while (this.aircrafts[i].current_ammo < this.aircrafts[i].max_ammo && this.aircrafts[i].isPriority === true && this.storeOfAmmo > 0){ 
+                    this.aircrafts[i].current_ammo ++;
+                    this.storeOfAmmo --;
                 }
                 while (this.aircrafts[i].current_ammo < this.aircrafts[i].max_ammo && this.aircrafts[i].isPriority === false && this.storeOfAmmo > 0){ 
-                    return this.aircrafts[i].current_ammo ++ && this.storeOfAmmo --;
-                    //return this.storeOfAmmo --;
+                    this.aircrafts[i].current_ammo ++ && this.storeOfAmmo --;
                 }
-                 
+                */ 
             }
         }
 
         )
     };
 
+    //ehelyett a fight helyett meghívni az aircraft fight-ját, és megnézni hogy azok mennyivel térnek vissza
     fight(anotherCarrier: Carrier){
         this.aircrafts.forEach ((aircraft: any) : any => {  
             return aircraft.current_ammo === 0;
@@ -86,6 +94,7 @@ class Carrier {
         })
     };
 
+    //aircraft metódusát meghívni
     getStatus(){
         for (let k = 0; k <= this.aircrafts.length; k++){
             return 'Type: ' + this.aircrafts[k].type + ', Ammo: ' + this.aircrafts[k].max_ammo + ', Base Damage: ' + this.aircrafts[k].base_damage + ', All Damage: ' + this.aircrafts[k].base_damage * this.aircrafts[k].current_ammo
