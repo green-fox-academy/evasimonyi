@@ -4,43 +4,43 @@ class Plant {
     type: string;
     colour: string;
     currentWaterAmount: number = 0;
-    thirstyBelowThis: number; 
+    thirstyBelowThis: number;
     canAbsorbThisAmount: number;
 
-    constructor(type, colour, currentWaterAmount, thirstyBelowThis, canAbsorbThisAmount){
+    constructor(type, colour, currentWaterAmount, thirstyBelowThis, canAbsorbThisAmount) {
         this.type = type;
         this.colour = colour;
         this.currentWaterAmount = currentWaterAmount;
         this.thirstyBelowThis = thirstyBelowThis;
         this.canAbsorbThisAmount = canAbsorbThisAmount;
     }
-
+    
     doesItNeedWater(): any {
-        return this.currentWaterAmount < this.thirstyBelowThis;
+      return this.currentWaterAmount < this.thirstyBelowThis;
+    }
+    
+    printStatus() {
+      if (this.doesItNeedWater()) {
+        console.log('This ' + this.colour + ' ' + this.type + ' needs water.')
+      } else {
+        console.log('This ' + this.colour + ' ' + this.type + ' doesn\'t need water.')
+      }
     }
 
-    printStatus(){
-        if (this.doesItNeedWater()){
-            console.log('This ' + this.colour + ' ' + this.type + ' needs water.')
-        } else {
-            console.log('This ' + this.colour + ' ' + this.type + ' doesn\'t need water.')
-        }
-    }
-
-    watering(wateringAmount: number){
+    watering(wateringAmount: number) {
         this.currentWaterAmount += (wateringAmount * this.canAbsorbThisAmount);
     }
 };
 
 class Flower extends Plant {
     constructor(colour){
-        super('flower', colour, 0, 5, 0.75);
+        super('flower', colour, 0, 5, .75);
     }
 }
 
 class Tree extends Plant {
     constructor(colour){
-        super('tree', colour, 0, 10, 0.4);
+        super('tree', colour, 0, 10, .4);
     }
 }
 
@@ -50,8 +50,9 @@ class Garden {
     wateringAll(wateringAmountAll: number){
         this.plants.forEach((plant: any): any => {
             if (plant.doesItNeedWater()) {
-                plant.watering(wateringAmountAll/this.plants.length);
+                plant.watering(wateringAmountAll / this.plants.length);
             }
+            //lefilterezem azokat akik need water, es annak a lengthjevel osztom el, visszaad egy arrayt
         });
     }    
 

@@ -1,0 +1,23 @@
+{
+  "name": "evasimonyi",
+  "version": "1.0.0",
+  "description": "This repo is for practicing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evasimonyi/evasimonyi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evasimonyi/evasimonyi/issues"
+  },
+  "homepage": "https://github.com/evasimonyi/evasimonyi#readme",
+  "devDependencies": {
+    "@types/tape": "^4.2.32",
+    "tape": "^4.9.1"
+  }
+}

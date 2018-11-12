@@ -22,7 +22,7 @@ class Plant {
     }
 
     printStatus(): void {
-        if (this.doesItNeedWater) {
+        if (this.doesItNeedWater()) {
             console.log('The ' + this.colour + ' ' + this.type + ' needs water.');  
         } else {
             console.log('The ' + this.colour + ' ' + this.type + ' doesn\'t need water.');
