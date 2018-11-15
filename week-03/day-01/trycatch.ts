@@ -18,3 +18,5 @@ keyword: throw
 kidob egy error objectet
 11. sorban: e.name, e.message
 */
+
+console.log(divideBy(4, 2));
