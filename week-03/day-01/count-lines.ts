@@ -3,8 +3,8 @@
 // It should return zero if it can't open the file, and
 // should not raise any error.
 
+'use strict';
 export {};
-
 
 declare function require (path: string);
 const fs = require('fs');

@@ -2,7 +2,10 @@
 // each of lines form the file.
 // If the program is unable to read the file (for example it does not exists),
 // then it should print an error message like: 'Unable to read file: my-file.txt'
-export { };
+
+'use strict';
+export {};
+
 declare function require(path: string);
 const fs = require('fs');
 

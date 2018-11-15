@@ -3,6 +3,7 @@
 // Write a function that returns an array with the unique IP adresses.
 // Write a function that returns the GET / POST request ratio.
 
+'use strict';
 export {};
 
 declare function require (path: string);

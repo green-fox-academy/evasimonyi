@@ -1,4 +1,6 @@
 // Create a method that decrypts duplicated-chars.txt
+
+'use strict';
 export {};
 
 declare function require (path: string);

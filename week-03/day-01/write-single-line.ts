@@ -2,6 +2,8 @@
 // Write your name in it as a single line
 // If the program is unable to write the file,
 // then it should print an error message like: 'Unable to write file: my-file.txt'
+
+'use strict';
 export {};
 
 declare function require (path: string);
@@ -14,6 +16,6 @@ if (fs.existsSync('my-file.txt')){
     console.log(fileContent2);
 } else {
     throw Error ('Unable to read file: my-file.txt');
-    }
+}
 
     

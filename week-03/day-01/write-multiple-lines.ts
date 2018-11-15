@@ -7,16 +7,17 @@
 // to the file and each line should be 'apple'
 // The function should not raise any error if it could not write the file.
 
+'use strict';
 export {};
 
 declare function require (path: string);
 const fs = require('fs');
 
 function writeTheWord (path: string, word: string, numberOfLines: number){
-        for (let i = 0; i < numberOfLines; i++) {
-            fs.appendFileSync(path, word);
-        }
+    for (let i = 0; i < numberOfLines; i++) {
+        fs.appendFileSync(path, word);
     }
+}
 
 writeTheWord ('apple.txt', 'apple\n', 5);
 

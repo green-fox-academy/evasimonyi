@@ -1,5 +1,8 @@
 // Create a method that decrypts reversed-lines.txt
 
+'use strict';
+export {};
+
 declare function require (path: string);
 const fs = require('fs');
 

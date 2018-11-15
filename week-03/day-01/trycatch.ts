@@ -1,3 +1,6 @@
+'use strict';
+export {};
+
 function divideBy(a: number, b:number) : number { //ez a return value
     if (b === 0){
         throw new Error ('can\'t divide by zero');
