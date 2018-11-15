@@ -1,3 +1,4 @@
+'use strict';
 export {};
 
 class Plant {
@@ -90,7 +91,6 @@ myGarden.wateringAll(70);
 myGarden.plants.forEach(function (plant: any) : any{
     plant.printStatus()
 });
-
 
 
 

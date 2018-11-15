@@ -8,7 +8,7 @@ readfilesync: szinkron metodus: ez blokkolja a kodot, bev'rja amig beolvasom a f
 aszinkron a hatterben beolvassa a fajlt es megy tovabb
 
 */
-
+'use strict';
 export {};
 
 declare function require (path: string): any;

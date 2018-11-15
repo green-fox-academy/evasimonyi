@@ -1,5 +1,5 @@
+'use strict';
 export {};
-// Person
 
 class Person {
     name: string;

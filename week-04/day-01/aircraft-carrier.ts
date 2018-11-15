@@ -1,3 +1,6 @@
+'use strict';
+export {};
+
 class Aircraft {
     type: any;
     current_ammo: number = 0;

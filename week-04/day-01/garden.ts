@@ -1,3 +1,6 @@
+'use strict';
+export {};
+
 class Plant {
     type: string; //flower or tree
     colour: string; //flower: yellow and blue, trees: purple and orange
