@@ -11,6 +11,9 @@
 // * size should depend on a variable
 // ** Relax, a matrix is just like an array
 
+'use strict';
+export {};
+
 let size : number = 5;
 let matrix : number [][] = [];
 

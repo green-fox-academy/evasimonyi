@@ -1,6 +1,9 @@
 // -  Create a function called `factorio`
 //    that returns it's input's factorial
 
+'use strict';
+export {};
+
 let num : number = 4;
 function factorio (num){
     let y = 1;

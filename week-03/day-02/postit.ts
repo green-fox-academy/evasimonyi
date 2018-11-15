@@ -9,6 +9,9 @@ an orange with blue text: "Idea 1"
 a pink with black text: "Awesome"
 a yellow with green text: "Superb!" */
 
+'use strict';
+export {};
+
 class PostIt {
     backgroundColor: string;
     text: string;

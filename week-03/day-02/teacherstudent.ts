@@ -6,6 +6,9 @@ Teacher
 teach(student) -> calls the students learn method
 answer() */
 
+'use strict';
+export {};
+
 class Student {
     learn() {   
     }

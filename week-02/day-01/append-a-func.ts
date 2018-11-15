@@ -3,6 +3,9 @@
 //    appends an 'a' character to its end and returns with a string
 // -  Print the result of `appendAFunc(typo)`
 
+'use strict';
+export {};
+
 var typo: string= 'Chincill';
 function appendAFunc(typo){
     console.log(typo + 'a')

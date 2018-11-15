@@ -1,3 +1,6 @@
+'use strict';
+export {};
+
 class DiceSet {
     // You have a `DiceSet` class which has a list for 6 dices
     // You can roll all of them with roll()

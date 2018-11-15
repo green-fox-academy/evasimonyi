@@ -6,6 +6,9 @@ Every animal can eat() which decreases their hunger by one
 Every animal can drink() which decreases their thirst by one
 Every animal can play() which increases both by one */
 
+'use strict';
+export {};
+
 class Animal {
     hunger_value: number;
     thirst_value: number;

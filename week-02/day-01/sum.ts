@@ -1,9 +1,8 @@
-'use strict';
-
-export {};
-
 // -  Write a function called `sum` that sum all the numbers until the given parameter
 // -  The function should return the result
+
+'use strict';
+export {};
 
 let number: number = 5;
 function sum (number) {
@@ -13,4 +12,5 @@ function sum (number) {
         };
         return summ;   
     }
+    
 console.log(sum (number));

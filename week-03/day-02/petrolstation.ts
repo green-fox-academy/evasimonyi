@@ -11,6 +11,9 @@ initialize gasAmount -> 0
 initialize capacity -> 100
 */
 
+'use strict';
+export {};
+
 class Station {
     gasAmount;
     // -> decreases the gasAmount by the capacity of the car and increases the cars gasAmount

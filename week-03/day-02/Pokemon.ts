@@ -5,6 +5,9 @@ You have a Pokemon class with a method called isEffectiveAgainst().
 
 Ash has a few pokemon. Help Ash decide which Pokemon to use against the wild one. */
 
+'use strict';
+export {};
+
 export class Pokemon {
     name: string;
     type: string;

@@ -2,6 +2,9 @@
 // -  Increment the third element simply by accessing it
 // -  Log the third element to the console
 
+'use strict';
+export {};
+
 let numList = [1, 2, 3, 4, 5];
 
 console.log(numList[2] + 1);

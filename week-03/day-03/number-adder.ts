@@ -1,5 +1,8 @@
 // Write a recursive function that takes one parameter: n and adds numbers from 1 to n.
 
+'use strict';
+export {};
+
 function numadder (num: number): number {
     if (num < 1) { //base case
       return 1;

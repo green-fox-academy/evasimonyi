@@ -13,7 +13,7 @@ const fs = require('fs');
 
 function copyContent (from: string, to: string){
     try {
-         fs.copyFile('from.txt', 'to.txt'); 
+        fs.copyFile('from.txt', 'to.txt'); 
     } 
     
     catch {

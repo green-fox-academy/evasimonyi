@@ -1,3 +1,6 @@
+'use strict';
+export {};
+
 var countdown = function(value) {
     if (value > 0) {
         console.log(value);
