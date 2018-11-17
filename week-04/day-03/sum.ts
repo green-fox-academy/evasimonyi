@@ -39,3 +39,30 @@ test('returns sum of numbers in array', function(t) {
     t.equal(actual, expected);
     t.end();
 }); 
+
+let listOfNumsEmpty = [];
+test('returns sum of numbers in array', function(t) {
+	const actual = newSum.getSum(listOfNumsEmpty);
+	const expected = 0;
+
+	t.equal(actual, expected);
+	t.end();
+}); 
+
+let listOfNumsOne = [4];
+test('returns sum of numbers in array', function(t) {
+	const actual = newSum.getSum(listOfNumsOne);
+	const expected = 4;
+
+	t.equal(actual, expected);
+	t.end();
+}); 
+
+let listOfNumsNull = [null];
+test('returns sum of numbers in array', function(t) {
+	const actual = newSum.getSum(listOfNumsNull);
+	const expected = 0;
+
+	t.equal(actual, expected);
+	t.end();
+}); 
