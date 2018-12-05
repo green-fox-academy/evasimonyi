@@ -28,4 +28,5 @@ for (let i : number = 0; i < size; i++) {
     }
 }
 
+
 console.log (matrix);

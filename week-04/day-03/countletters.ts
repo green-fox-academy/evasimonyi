@@ -22,3 +22,21 @@ test('count letter occurence of string', (t) => {
     t.plan(1);
     t.deepEqual(occurence('Hello World'), { H: 2, e: 2, l: 6, o: 4, ' ': 2, w: 1, r: 2, d: 2, W: 1 });
 }); 
+
+/*
+Bence megoldasa
+export const countLetter = (word: string): any => {
+  //létrehozok egy üres objectet (mindig const, mert referencia szerint akarok vele foglalkozni)
+  const letter = {};
+  //word stringet karakterekre szétszedem(splittel), majd a foreach-el végigiterálok minden elemen
+  word.split('').forEach(e => {
+  //ha az objectnek létezik key-value párja, növelem 1-el a value-t, különben legyen 1 a value
+    letter[e] ? letter[e]++ : letter[e] = 1;
+  });
+  //visszatérek az objecttel
+  return letter;
+}
+
+console.log(countLetter('Hello World'));
+
+*/
