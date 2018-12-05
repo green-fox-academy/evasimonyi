@@ -1,0 +1,40 @@
+.header {
+  background-color: purple;
+  text-align: left;
+  justify-content: center;
+  padding: 20px;
+}
+
+.cyan {
+  position: relative;
+  display: inline-block;
+  background: cyan;
+  margin-right: 5px;
+  height: 60px;
+  width: 80px;
+}
+
+.container {
+  display: flex;
+  height: 300px;
+  width: 100;
+  align-items: center;
+  justify-content: stretch;
+}
+
+.yellow {
+  background-color: yellow;
+  flex-grow: 3;
+  height: stretch;
+  width: 70%;
+}
+
+.green {
+  background-color: green;
+  flex-grow: 1;
+  height: stretch;
+  width: 30%;
+}
+
+
+
