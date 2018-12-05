@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  background: yellow;
+  height: 500px;
+  padding-left: 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.purple {
+  display: block;
+  background: purple;
+  width: 100px;
+  height: 100px;
+  margin-right: 5px;
+  line-height: 50px;
+}
