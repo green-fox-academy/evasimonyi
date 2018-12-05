@@ -3,7 +3,7 @@
   background: yellow;
   height: 500px;
   padding-left: 0;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-end;
 }
 
