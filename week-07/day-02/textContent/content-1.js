@@ -3,6 +3,7 @@
     2)  Do the same again, but you should keep the cat strong.
 */
 
+/*
 //1
 let paragraphs = document.querySelectorAll('p');
 const animals = document.querySelector('.animals');
@@ -18,10 +19,11 @@ paragraphs.forEach(e => {
 paragraphs.forEach(e => {
   console.log(e.innerText);
 });
+*/
 
 //2
 paragraphs.forEach(e => {
-  e = animals;
+  e.innerHTML = animals.innerHTML;
 });
 
 paragraphs.forEach(e => {
