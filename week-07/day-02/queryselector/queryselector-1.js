@@ -32,7 +32,7 @@ conceitedKing.forEach(e => {
 });
 
 //4
-const noBusiness = document.querySelectorAll('.container, .b329');
+const noBusiness = document.querySelectorAll('div');
 noBusiness.forEach(e => {
   console.log(e.innerText);
 });
