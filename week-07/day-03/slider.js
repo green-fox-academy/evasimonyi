@@ -9,7 +9,6 @@ const images = document.querySelectorAll('img');
 //   mainImage.setAttribute('src', './3.jpg');
 // });
 
-
 // rightButton.addEventListener('click', function () {
 //   mainImage.setAttribute('src', './2.jpg');
 // });
@@ -20,12 +19,12 @@ const images = document.querySelectorAll('img');
 
 leftButton.addEventListener('click', function () {
   images.forEach((e, i) => {
-    mainImage.setAttribute('src', e.getAttribute('src'));
+    mainImage.setAttribute('src', e[i].getAttribute('src'));
   });
 });
 
 rightButton.addEventListener('click', function () {
-  images.forEach((e, i) => {
+  images.forEach(e => {
     mainImage.setAttribute('src', e.getAttribute('src'));
   });
 });
