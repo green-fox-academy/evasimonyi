@@ -10,17 +10,21 @@
   margin-top: 30px;
 }
 
-.img {
+.mainImg {
   display: block;
-  background-color: white;
   width: 600px;
   height: stretch;
 }
 
+.image {
+  
+}
+
 .arrow {
+  align-content: center;
+  align-items: center;
   justify-content: center;
-  background-color: blueviolet;
-  height: 30px;
+  height: 10px;
   width: 15px;
   flex-wrap: wrap;
 }
@@ -46,10 +50,10 @@
 }
 
 .btnlft {
-  display: block;
   background-image: url('./arrow.svg');
 }
 
 .btnrght {
   background-image: url('./arrow.svg');
+  -webkit-transform: rotate(180deg);
 }
