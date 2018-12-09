@@ -17,14 +17,14 @@ const images = document.querySelectorAll('img');
 //   mainImage.setAttribute('src', './1.jpg');
 // });
 
-leftButton.addEventListener('click', function () {
-  images.forEach((e, i) => {
-    mainImage.setAttribute('src', e[i].getAttribute('src'));
-  });
-});
+// leftButton.addEventListener('click', function () {
+//   images.forEach((e, i) => {
+//     mainImage.setAttribute('src', e[i].getAttribute('src'));
+//   });
+// });
 
-rightButton.addEventListener('click', function () {
-  images.forEach(e => {
-    mainImage.setAttribute('src', e.getAttribute('src'));
-  });
-});
+// rightButton.addEventListener('click', function () {
+//   images.forEach(e => {
+//     mainImage.setAttribute('src', e.getAttribute('src'));
+//   });
+// });

@@ -1,55 +1,64 @@
 .container {
   display: flex;
-  height: 400px;
-  width: 100%;
-  position: relative;
-  align-content: center;
+  width: 96%;
+  flex-wrap: wrap;
+  flex: 1 1 0;
+  align-items: center;
   justify-content: center;
-  padding: 0;
-  margin-top: 30px;
-  margin-top: 30px;
+  padding: 1%;
+  margin: 1%;
 }
 
 .mainImg {
   display: block;
-  width: 600px;
+  width: 800px;
   height: stretch;
+  align-items: center;
 }
 
 .arrow {
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  height: 10px;
-  width: 15px;
-  flex-wrap: wrap;
-}
-
-.container2 {
   display: flex;
-  height: 100px;
-  width: 100%;
-  position: relative;
   align-content: center;
   justify-content: center;
-  padding: 0;
-  margin: 5px;
-}
-
-.thumbnails {
-  position: relative;
-  display: inline-block;
-  align-content: center;
-  margin: 5px;
-  height: 60px;
-  width: 60px;
+  height: 20px;
+  width: 20px;
 }
 
 .btnlft {
-  background-image: url('./arrow.svg');
+  background-image: url('./arrow.svg') no-repeat center;
+  background-size: 100%;
 }
 
 .btnrght {
-  background-image: url('./arrow.svg');
+  background-image: url('./arrow.svg') no-repeat center;
   -webkit-transform: rotate(180deg);
+}
+
+.container second {
+  height: 100px;
+  width: 100%;
+  align-content: space-around;
+  justify-content: center;
+}
+
+/* .second {
+  justify-content: center;
+  align-content: space-between;
+} */
+
+.thumbnails {
+  display: inline-block;
+  align-content: space-between;
+  justify-content: center;
+  width: 100%;
+}
+
+.img {
+  display: inline-block;
+  margin: 1%;
+  padding: 1%;
+  width: 8%;
+  height: 60px;
+  background-color: blueviolet;
+  text-align: center;
 }
