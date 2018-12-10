@@ -1,9 +1,9 @@
 const leftButton = document.querySelector('.btnlft');
 const rightButton = document.querySelector('.btnrght');
 
-const mainImage = document.querySelector('.image');
+const thumbnails = document.querySelector('.img');
 
-const images = document.querySelectorAll('img');
+// const images = document.querySelectorAll('img');
 
 // leftButton.addEventListener('click', function () {
 //   mainImage.setAttribute('src', './3.jpg');
@@ -17,14 +17,14 @@ const images = document.querySelectorAll('img');
 //   mainImage.setAttribute('src', './1.jpg');
 // });
 
-// leftButton.addEventListener('click', function () {
-//   images.forEach((e, i) => {
-//     mainImage.setAttribute('src', e[i].getAttribute('src'));
-//   });
-// });
+leftButton.addEventListener('click', function () {
+  thumbnails.forEach((e, i) => {
+    mainImage.setAttribute('src', e[i].getAttribute('src'));
+  });
+});
 
-// rightButton.addEventListener('click', function () {
-//   images.forEach(e => {
-//     mainImage.setAttribute('src', e.getAttribute('src'));
-//   });
-// });
+rightButton.addEventListener('click', function () {
+  thumbnails.forEach(e => {
+    mainImage.setAttribute('src', e.getAttribute('src'));
+  });
+});
