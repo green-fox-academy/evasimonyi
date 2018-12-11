@@ -1,7 +1,17 @@
+.article {
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
 .cica {
   display: inline-block;
-  height: 50px;
   width: 80%;
   margin: 20px;
-  font-family: arial;
+  padding: 20px;
+  line-height: 2em;
+  border: solid black 2px;
+  background-color: antiquewhite;
+  font-family: Helvetica;
+  text-align: justify;
 }
