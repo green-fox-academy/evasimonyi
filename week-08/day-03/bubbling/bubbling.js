@@ -8,21 +8,21 @@
 
 const nav = document.querySelector('nav');
 const image = document.querySelector('.img-inspector');
-let addPixels = 10;
+let addPixels = 0;
 
 const move = (event) => {
   if (event.target.dataset.direction === 'up') {
-    image.setAttribute('style', `background-position-y: ${addPixels}px;`);
     addPixels -= 10;
+    image.setAttribute('style', `background-position-y: ${addPixels}px;`);
   } else if (event.target.dataset.direction === 'left') {
-    image.setAttribute('style', `background-position-x: ${addPixels}px;`);
     addPixels -= 10;
-  } else if (event.target.dataset.direction === 'right') {
     image.setAttribute('style', `background-position-x: ${addPixels}px;`);
+  } else if (event.target.dataset.direction === 'right') {
     addPixels += 10;
+    image.setAttribute('style', `background-position-x: ${addPixels}px;`);
   } else if (event.target.dataset.direction === 'down') {
-    image.setAttribute('style', `background-position-y: ${addPixels}px;`);
     addPixels += 10;
+    image.setAttribute('style', `background-position-y: ${addPixels}px;`);
   }
 }
 
