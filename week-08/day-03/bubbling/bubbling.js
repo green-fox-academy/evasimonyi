@@ -27,3 +27,17 @@ const move = (event) => {
 }
 
 nav.addEventListener('click', move);
+
+let backgroundSize = 100;
+
+const zoom = () => {
+  if (event.target.dataset.direction === 'in') {
+    image.setAttribute('style', `background-size: ${backgroundSize}%;`);
+    backgroundSize += 20;
+  } else if (event.target.dataset.direction === 'out') {
+    image.setAttribute('style', `background-size: ${backgroundSize}%;`);
+    backgroundSize -= 20;
+  }
+}
+
+nav.addEventListener('click', zoom);
