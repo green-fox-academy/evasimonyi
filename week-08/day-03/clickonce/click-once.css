@@ -1,0 +1,12 @@
+div {
+  display: inline-block; 
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
+  line-height: 2em;
+  border: solid black 2px;
+  background-color: antiquewhite;
+  font-family: Helvetica;
+  text-align: justify;
+
+}
