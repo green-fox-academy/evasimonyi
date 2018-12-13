@@ -12,42 +12,32 @@
   <div class="container">
     <form action="" method="POST" class="form-example" validate>
 
-      <div class="animalsContainer">
-          <p>What is your favourite pet?</p>
-        <div class="choose">
-          <input type="radio" id="choice1" name="animal" value="Dog">
-          <label for="choice1">Dog</label>
-        </div>
-        
-        <div class="choose">
-          <input type="radio" id="choice2" name="animal" value="Cat">
-          <label for="choice2">Cat</label>
-        </div>
-
-        <div class="choose">
-          <input type="radio" id="choice3" name="animal" value="fish">
-          <label for="choice3">Viktor the goldfish</label>
-        </div>
-        <button type="submit">Submit</button>
+      <div id="animals" class="animalsContainer">
+        <p>What is your favourite pet?</p>
+        <input type="radio" name="favpet" value="dog" id="dog">
+        <label for="dog">Dog</label>
+        <br>
+        <input type="radio" name="favpet" value="cat" id="cat">
+        <label for="cat">Cat</label>
+        <br>
+        <input type="radio" name="favpet" value="goldfish" id="goldfish">
+        <label for="goldfish">Viktor the goldfish</label>
+        <br>
+        <button disabled type="submit">Submit</button>
       </div>
 
-      <div class="animalsContainer">
-          <p>Do you want to sign up for cat facts?</p>
-        <div class="choose">
-          <input type="radio" id="catyes" name="catyes" value="catyes">
-          <label for="catyes">Yes</label>
-        </div>
-        
-        <div class="choose">
-          <input type="radio" id="catno" name="catno" value="catno">
-          <label for="catno">No</label>
-        </div>
-
-        <button type="submit">Submit</button>
+      <div id="yesno" class="animalsContainer">
+        <p>Do you want to sign up for cat facts?</p>
+        <input type="radio" name="yes-no" value="yes" id="yes">
+        <label for="yes">Yes</label>
+        <br>
+        <input type="radio" name="yes-no" value="no" id="no">
+        <label for="no">No</label>
+        <button disabled type="submit">Submit</button>
       </div>
 
-      <button type="submit">I love cats</button>
-      <button type="submit">Sign up</button>
+      <button disabled id="loveCats" type="submit">I love cats</button>
+      <button disabled id="signupbutton" type="submit">Sign up</button>
     </form>
 
   </div>
