@@ -1,0 +1,41 @@
+body {
+  display: flex;
+  width: 100%;
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  margin: 10px;
+}
+
+.animalsContainer {
+  display: block;
+  margin: 10px;
+  padding: 10px;
+  border: solid 0.5px purple;
+}
+
+p {
+  padding: 10px;
+  margin: 5px;
+}
+
+.choose {
+  display: block;
+  padding: 10px;
+  margin: 5px;
+}
+
+button {
+  display: block;
+  padding: 5px;
+  margin: 10px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  color: purple;
+}
