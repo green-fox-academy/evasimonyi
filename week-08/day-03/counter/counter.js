@@ -12,6 +12,7 @@ let countingElements = () => {
     counter++;
   })
   resultField.innerText = counter;
+  btn.removeEventListener('click', countingElements);
 }
 
 btn.addEventListener('click', countingElements);
