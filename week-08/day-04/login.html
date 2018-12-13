@@ -9,23 +9,25 @@
 </head>
 
 <body>
-  <form action="" method="POST" class="form-example" validate>
-    <div class="form-example">
-      <p>ACCOUNT LOGIN</p>
-    </div>
-    <div class="form-example">
-      <label for="name">USERNAME</label>
-      <input type="text" name="name" id="name" autofocus required>
-    </div>
-    <div class="form-example">
-      <label for="email">PASSWORD</label>
-      <input type="text" name="password" id="password" required>
-    </div>
-    <div class="form-example">
-      <input type="submit" value="LOGIN">
-    </div>
-
-    <link rel="stylesheet" href="./login.css">
+  <div class="container">
+    <form action="" method="POST" class="form-example" validate>
+      <div class="form-example">
+        <p>ACCOUNT LOGIN</p>
+      </div>
+      <div class="form-example">
+        <label for="name">USERNAME</label>
+        <input type="text" name="name" id="name" autofocus required>
+      </div>
+      <div class="form-example">
+        <label for="email">PASSWORD</label>
+        <input type="password" name="password" id="password" required>
+        <p class="forgot">Forgot Password?</p>
+      </div>
+      <div class="form-example">
+        <input type="submit" value="LOGIN">
+      </div>
+  </div>
+  <link rel="stylesheet" href="./login.css">
   </form>
 </body>
 
