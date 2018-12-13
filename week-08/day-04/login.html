@@ -19,14 +19,22 @@
         <input type="text" name="name" id="name" autofocus required>
       </div>
       <div class="form-example">
-        <label for="email">PASSWORD</label>
-        <input type="password" name="password" id="password" required>
+        <label for="password">PASSWORD</label>
+        
+        <div class="eyecontainer">
+            <input type="password" name="password" id="password" required>
+          <div class="eye" onmousedown="showPassword()">
+            <img src="./img.png" class="eye" alt="">
+          </div>
+        </div>
+
         <p class="forgot">Forgot Password?</p>
       </div>
       <div class="form-example">
         <input type="submit" value="LOGIN">
       </div>
   </div>
+  <script src="./login.js"></script>
   <link rel="stylesheet" href="./login.css">
   </form>
 </body>
