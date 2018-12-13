@@ -11,3 +11,4 @@ const countingElements = () => {
 }
 
 btn.addEventListener('click', countingElements);
+

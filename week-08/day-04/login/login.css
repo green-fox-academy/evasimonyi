@@ -40,6 +40,7 @@ input[type=text], input[type=password] {
   width: 460px;
   margin: 10px;
   border-radius: 3px;
+  font-size: 20px;
 }
 
 input[type=password] {
