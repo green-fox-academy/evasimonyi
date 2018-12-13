@@ -6,13 +6,8 @@ const listElements = document.querySelectorAll('li');
 const btn = document.querySelector('button');
 const resultField = document.querySelector('.result');
 
-let counter = 0;
-let countingElements = () => {
-  listElements.forEach(function () {
-    counter++;
-  })
-  resultField.innerText = counter;
-  btn.removeEventListener('click', countingElements);
+const countingElements = () => {
+  resultField.innerText = listElements.length;
 }
 
 btn.addEventListener('click', countingElements);
