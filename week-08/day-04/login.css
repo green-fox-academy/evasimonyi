@@ -1,0 +1,60 @@
+body {
+  display: inline-block;
+  width: 100%;
+  height: 600px;
+  background-color: darkgray;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  background-color: whitesmoke;
+  border: 3px solid #f1f1f1;
+  width: 40%;
+  justify-content: center;
+}
+
+p {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.form-example {
+  display: block;
+  padding: 10px;
+  margin: 10px;
+}
+
+input[type=text] {
+  height: 30px;
+  width: 200px;
+  margin: 10px;
+}
+
+input:focus {
+  outline: green;
+  border:1px solid green;
+}
+
+label {
+  display: block;
+  padding: 10px;
+}
+
+input[type=submit] {
+  padding: 10px;
+  width: 120px;
+  height: 50px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  text-emphasis-style: bold;
+  border-radius: 40px;
+}
+
+div {
+  justify-content: center;
+  text-align: left;
+}
