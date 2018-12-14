@@ -1,12 +1,10 @@
 function showPassword() {
-  var x = document.getElementById("password");
-  if (x.type === "password") {
-    x.type = "text";
+  let pwd = document.querySelector('#password');
+  if (pwd.type === 'password') {
+    pwd.type = 'text';
   } else {
-    x.type = "password";
+    pwd.type = 'password';
   }
 }
 
-const password = document.querySelector('password');
 
-password.addEventListener('onmousedown', showPassword);
