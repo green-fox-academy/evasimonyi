@@ -28,6 +28,5 @@ buttons.forEach(button => {
       alert('Sigh, we still added you to the cat facts list');
     }
   })
-  
-} )
+})
 

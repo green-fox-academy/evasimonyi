@@ -11,33 +11,30 @@
 <body>
   <div class="container">
     <form action="" method="POST" class="form-example" validate>
-      <div class="form-example">
+      <div id="title">
         <p>ACCOUNT LOGIN</p>
       </div>
-      <div class="form-example">
+
+      <div class="username-cont">
         <label for="name">USERNAME</label>
         <input type="text" name="name" id="name" autofocus required>
       </div>
-      <div class="form-example">
+
+      <div class="password-cont">
         <label for="password">PASSWORD</label>
 
-        <div class="eyecontainer">
+        <div class="passwordinput">
           <input type="password" name="password" id="password" required>
-          <div class="eye" onmousedown="showPassword()">
-            <img src="./img.png" class="eye" alt="">
-          </div>
+          <img class="eye" onmousedown="showPassword()" src="./img.png">
         </div>
 
+        <p id="forgot">Forgot Password?</p>
 
       </div>
-      <div class="form-example">
-        <p class="forgot">Forgot Password?</p>
-      </div>
-      <div class="form-example">
-        <input type="submit" value="LOGIN">
-      </div>
-      
+      <button type="submit">LOGIN</button>
+
   </div>
+
   <script src="./login.js"></script>
   <link rel="stylesheet" href="./login.css">
   </form>
