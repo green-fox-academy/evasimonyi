@@ -8,10 +8,15 @@ app.set('view engine', 'ejs');
 // home page
 app.get('/', (req, res) => {
   // render `home.ejs`
-  res.render('home');
+  res.render('home', {
+    title: 'Hello World',
+    songtitle: 'bohemian rhapsody',
+    content: 'Freddie is a God'
+  });
 });
 
 // start express app on port 3000
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
+
