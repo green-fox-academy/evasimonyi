@@ -1,11 +1,8 @@
 let express = require('express');
 let app = express();
 
-
-
 app.set('view engine', 'ejs');
 app.use('/practice', express.static('practice'));
-
 
 app.get('/', function (req, res) {
   res.json({ Hello: 'World' });
