@@ -3,6 +3,7 @@ const app = express();
 const PORT = 3000;
 
 app.set('view engine', 'ejs');
+app.use('/static', express.static('static'));
 app.use(express.json());
 
 const cocktails = [
@@ -16,13 +17,29 @@ const cocktails = [
   { name: 'SAFE SEX ON THE BEACH', price: 990, contains: ['peach schnapps', 'orange juice', 'cranberry juice'], isAlcoholic: false },
 ];
 
+
 const alcoholList = ['gin', 'vodka', 'rum', 'tequila'];
 
 app.get('/', (req, res) => {
-  res.render('home', {
-    alcoholList: alcoholList,
-    cocktails: cocktails
-  })
+  if (req.query.alcohol) {
+    let filteredCocktails = [];
+    cocktails.forEach(function (item) {
+      item.contains.forEach(function (alc) {
+        if (alc === req.query.alcohol) {
+          filteredCocktails.push(item);
+        };
+      })
+    })
+    res.render('home', {
+      alcoholList: alcoholList,
+      cocktails: filteredCocktails
+    })
+  } else {
+    res.render('home', {
+      alcoholList: alcoholList,
+      cocktails: cocktails
+    })
+  }
 });
 
 app.listen(PORT, () => {
