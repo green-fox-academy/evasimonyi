@@ -4,6 +4,7 @@ const path = require('path');
 const PORT = 8080;
 
 app.use('/assets', express.static('assets'));
+app.use(express.json());
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
@@ -34,11 +35,44 @@ app.get('/greeter', (req, res) => {
 
 app.get('/appenda/:appendable?', (req, res) => {
   if (req.params.appendable) {
-    res.json({ 
+    res.json({
       "appended": `${req.params.appendable}a`
     });
   } else if (req.params.appendable !== true) {
     res.status(404).send();
+  }
+});
+
+const factorialize = (num) => {
+  if (num < 0) {
+    return -1;
+  } else if (num == 0) {
+    return 1;
+  } else {
+    return (num * factorialize(num - 1));
+  }
+}
+
+const sum = (num) => {
+  let summary = 0;
+  for (let i = 1; i <= num; i++) {
+    summary += i;
+  }
+  return summary;
+}
+
+app.post('/dountil/:action', (req, res) => {
+  let until = req.body.until;
+  if (req.params.action === 'factor') {
+    res.send({
+      "result": factorialize(until)
+    });
+  } else if (req.params.action === 'sum') {
+    res.send({
+      "result": sum(until)
+    });
+  } else {
+    res.send({ "error": "Please provide a number!" });
   }
 });
 
