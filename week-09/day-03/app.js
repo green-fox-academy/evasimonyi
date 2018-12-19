@@ -32,6 +32,16 @@ app.get('/greeter', (req, res) => {
   }
 });
 
+app.get('/appenda/:appendable?', (req, res) => {
+  if (req.params.appendable) {
+    res.json({ 
+      "appended": `${req.params.appendable}a`
+    });
+  } else if (req.params.appendable !== true) {
+    res.status(404).send();
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
