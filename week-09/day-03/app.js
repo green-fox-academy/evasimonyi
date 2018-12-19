@@ -26,9 +26,9 @@ app.get('/greeter', (req, res) => {
     res.send({
       "welcome_message": `Oh, hi there ${req.query.name}, my dear ${req.query.title}!`
     })
-  } else if (req.query.name !== true) {
+  } else if (!req.query.name) {
     res.send({ "error": "Please provide a name!" });
-  } else if (req.query.title !== true) {
+  } else if (!req.query.title) {
     res.send({ "error": "Please provide a title!" });
   }
 });
