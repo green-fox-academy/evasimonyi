@@ -6,13 +6,13 @@ xhr.onreadystatechange = () => {
   if (xhr.readyState === XMLHttpRequest.DONE) {
     if (xhr.status === 200) {
       const response = JSON.parse(xhr.responseText);
+      //ezt erdemes kint meghatarozni az egeszbol:
       const imgs = document.querySelector('.thumbnails');
       response.data.forEach(e => {
         const images = document.createElement('img');
         images.setAttribute('src', e.images.downsized_still.url)
         imgs.appendChild(images);
-
-        images.onclick = function () {
+        images.onclick = () => {
           images.setAttribute('src', e.images.downsized.url);
         }
       });
