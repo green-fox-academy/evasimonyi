@@ -5,7 +5,6 @@ const PORT = 8080;
 
 app.use('/assets', express.static('assets'));
 
-
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
