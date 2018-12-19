@@ -1,5 +1,7 @@
 const API_BASE_URL = "https://api.giphy.com/v1/gifs/search?api_key=9TvdL2dZ2ceVcOiZALYzBbps2OuTXJ0d&"
 
+//api kulcsot kulon kell kimenteni, mint a link
+
 const xhr = new XMLHttpRequest();
 
 xhr.onreadystatechange = () => {
