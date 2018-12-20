@@ -4,8 +4,8 @@ use todo;
 CREATE TABLE todo;
 CREATE TABLE todolist (
   id INT NOT NULL AUTO_INCREMENT, 
-  Task TEXT NOT NULL, Status TEXT NOT NULL 
-  ENUM ('done', 'not done'), 
+  Task TEXT NOT NULL, 
+  Status TEXT NOT NULL ENUM ('done', 'not done'), 
   PRIMARY KEY (id)
   );
 

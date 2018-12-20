@@ -53,7 +53,6 @@ app.post('/arrays', (req, res) => {
       "error": "Please provide what to do with the numbers!"
     })
   }
-
 });
 
 app.listen(PORT, () => {
