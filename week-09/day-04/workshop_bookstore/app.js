@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/author', (req, res) => {
-  const sql = 'SELECT  * FROM author;';
+  const sql = 'SELECT * FROM author;';
   conn.query(sql, (err, data) => {
     if (err) {
       console.log(err.message);
@@ -32,45 +32,19 @@ app.get('/author', (req, res) => {
   });
 });
 
-
-
-
-
-
-// con.connect((err) => {
-//   if(err){
-//     console.log('Error connecting to Db');
-//     return;
-//   }
-//   console.log('Connection established');
-// });
-
-// const bookNames = 'SELECT book_name FROM book_mast';
-
-// con.query(bookNames, function(err, rows) {
-//   if (err) {
-//     console.log(err.message);
-//     // res.status(500).send();
-//   } else {
-//     console.log('Data received from Db:\n');
-//     console.log(rows);
-//   }
-// });
-
-
-// app.get('/author', (req, res) => {
-//   con.query('SELECT * FROM author', (err, data) => {
-//     if (err) {
-//       console.log(err.message);
-//       res.status(500).json();
-//     } else {
-//       console.log('Data received from Db:\n');
-//       console.log(data);
-//     }
-//     res.json(data)
-//   });
-// });
-
+app.get('/books', (req, res) => {
+  const bookNames = 'SELECT book_name FROM book_mast;';
+  conn.query(bookNames, (err, data) => {
+    if (err) {
+      console.log(err.message);
+      res.status(500).json({
+        error: 'Internal server error'
+      });
+      return;
+    }
+    res.json(data);
+  });
+});
 
 // con.end(err => {
 //   if (err) {
@@ -79,7 +53,6 @@ app.get('/author', (req, res) => {
 //   }
 //   console.log('\n', 'Disconnected from database');
 // });
-
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);

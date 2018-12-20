@@ -1,6 +1,6 @@
 const xhr = new XMLHttpRequest();
 
-xhr.open('GET', '/author');
+xhr.open('GET', '/books');
 
 xhr.onload = () => {
   if (xhr.status === 200) {
