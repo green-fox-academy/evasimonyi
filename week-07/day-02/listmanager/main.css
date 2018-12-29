@@ -1,0 +1,12 @@
+ul {
+  display: inline-block;
+  width: 150px;
+}
+
+div {
+  display: inline-block;
+}
+
+button {
+  display: block;
+}
