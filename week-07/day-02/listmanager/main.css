@@ -1,12 +1,35 @@
+body {
+  display: flex;
+  width: 100%;
+  height: 200px;
+}
+
 ul {
-  display: inline-block;
-  width: 150px;
+  display: flex;
+  width: 100px; 
+  height: 150px; 
+  border: 1px solid black; 
+  font-size: 20px;
+  margin: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  overflow: hidden;
+}
+
+li {
+  list-style: none;
+  width: 100%;
+  padding-left: 10px;
 }
 
 div {
-  display: inline-block;
+  margin: 10px;
 }
 
-button {
-  display: block;
+div button {
+  width: 100%;
+  height: 20%;
+  border: 1px solid black;
+  font-size: 20px;
+  background-color: grey;
 }
