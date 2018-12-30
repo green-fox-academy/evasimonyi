@@ -1,27 +1,18 @@
-.container {
-  display: flex;
-  width: 96%;
-  flex-wrap: wrap;
-  flex: 1 1 0;
-  align-items: center;
-  justify-content: center;
-  padding: 1%;
-  margin: 1%;
+body {
+  background-color: pink;
+  align-items: flex-start;
 }
 
 .thumbnails {
   display: inline-block;
-  align-content: space-between;
+  /* align-content: space-between; */
   text-align: center;
   width: 100%;
 }
 
-.img {
+img {
   display: inline-block;
   margin: 1%;
-  padding: 1%;
-  width: 8%;
-  height: 60px;
-  background-color: blueviolet;
-  text-align: center;
+  width: 20%;
+  height: 20%;
 }
