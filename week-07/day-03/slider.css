@@ -15,10 +15,16 @@
   width: 600px;
   height: 400px;
   align-items: center;
+  position: relative;
+}
+
+p {
+  position: relative;
+  width: 100%;
+  
 }
 
 .container .thumbnails {
-  /* height: 100px; */
   width: 100%;
   align-content: space-around;
   justify-content: center;

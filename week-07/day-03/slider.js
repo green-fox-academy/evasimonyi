@@ -35,6 +35,7 @@ const pictures = [
   },
 ];
 
+//putting the images into the thumbnails section
 const mainImg = document.querySelector('.mainImg');
 mainImg.setAttribute('src', pictures[0].url);
 
@@ -44,17 +45,19 @@ for (let i = 0; i < pictures.length; i++) {
   thumbnails.appendChild(thumbnail);
 }
 
+//eventlistener: clicking on a picture makes the picture become the main displayed image
 const images = document.querySelectorAll('img');
 
-// const displayThisPic = (e) => {
-//   mainImg.setAttribute('src', e.target.url);
-// }
+const displayThisPic = (e) => {
+  mainImg.setAttribute('src', e.target.src);
+}
 
-// images.forEach(e => {
-//   console.log(e);
-//   e.addEventListener('click', displayThisPic)
-// })
+images.forEach(e => {
+  e.addEventListener('click', displayThisPic)
+})
 
+
+//button functions
 let selectedPictureIndex = 0;
 
 const showNextPic = () => {
@@ -74,9 +77,10 @@ const showPreviousPic = () => {
     selectedPictureIndex--;
     mainImg.setAttribute('src', pictures[selectedPictureIndex].url);
   } else if (selectedPictureIndex === 0) {
-    selectedPictureIndex = pictures.length;
+    selectedPictureIndex = pictures.length - 1;
     mainImg.setAttribute('src', pictures[selectedPictureIndex].url);
   }
 }
 
 leftButton.addEventListener("click", showPreviousPic);
+
