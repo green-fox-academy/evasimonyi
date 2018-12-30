@@ -1,3 +1,5 @@
+'use strict';
+
 const API_BASE_URL = "https://api.giphy.com/v1/gifs/search?api_key=9TvdL2dZ2ceVcOiZALYzBbps2OuTXJ0d&"
 let API_KEY = "q=dog&limit=16&offset=0&rating=G&lang=en"
 
