@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./login.css">
   <title>Login page</title>
 </head>
 
@@ -17,18 +18,20 @@
 
       <div class="username-cont">
         <label for="name">USERNAME</label>
-        <input type="text" name="name" id="name" autofocus required>
+        <input type="text" name="name" id="name" autofocus placeholder="Please enter your name" minlength="5" required>
       </div>
 
       <div class="password-cont">
         <label for="password">PASSWORD</label>
 
         <div class="passwordinput">
-          <input type="password" name="password" id="password" required>
+          <input type="password" name="password" id="password" placeholder="Please enter your password" minlength="5" required>
           <img class="eye" onclick="showPassword()" src="./img.png">
         </div>
 
-        <p id="forgot">Forgot Password?</p>
+        <!-- <p id="forgot">Forgot Password?</p> -->
+        <a id="forgot" href="https://media.giphy.com/media/jU48Xfq4guB3y/giphy.gif">Forgot
+          Password?</a><br>
 
       </div>
       <button type="submit">LOGIN</button>
@@ -36,7 +39,6 @@
   </div>
 
   <script src="./login.js"></script>
-  <link rel="stylesheet" href="./login.css">
   </form>
 </body>
 
