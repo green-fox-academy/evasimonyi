@@ -32,15 +32,3 @@ for (let i = 1; i <= 100; i++) {
   }
 }
 
-const divs = document.querySelectorAll('div');
-
-let divIndex = 0;
-
-let timer = setInterval(() => {
-  if(divIndex < divs.length){
-    isPrime(divs[divIndex]);
-    divIndex++;
-  } else {
-    clearInterval(timer);
-  }
-}, 100);
