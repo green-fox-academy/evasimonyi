@@ -3,7 +3,6 @@
 // 3) Display the last pressed key's code as "Last pressed key code is: __"
 
 const h1 = document.querySelector('h1');
-const keyup = window.onkeyup;
 
 const body = document.querySelector('body');
 
