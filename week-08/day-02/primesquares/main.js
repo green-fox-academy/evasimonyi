@@ -4,6 +4,7 @@
 //   - the timer should fire every 100ms
 //     - the timer should stop when there are no more elements left to be colored
 
+'use strict';
 const section = document.querySelector('section');
 
 let isPrime = (n) => {
