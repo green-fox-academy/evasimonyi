@@ -31,5 +31,11 @@ let createTenBoxes = () => {
 window.onscroll = () => {
   if (window.scrollY + window.innerHeight >= container.clientHeight - scrollThreshold) {
     createTenBoxes();
-  };
+  } if (window.scrollY <= scrollThreshold) {
+    for (let i = 0; i < 10; i++) {
+      const div = document.createElement('div');
+      div.setAttribute('style', `background-color: ${randomColour()}`)
+      container.insertBefore(div, container.childNodes[0]);
+    }
+  }
 }
