@@ -6,12 +6,12 @@
 'use strict';
 
 const button = document.querySelector('button');
-const body = document.querySelector('body');
+// const body = document.querySelector('body');
 
-let displayText = () => {
+const displayText = () => {
   const text = document.createElement('p');
   text.textContent = '5 seconds elapsed and clicked 3 times';
-  body.appendChild(text);
+  document.body.appendChild(text);
 }
 
 window.onload = () => {
@@ -21,5 +21,5 @@ window.onload = () => {
         displayText();
       };
     }
-  }, 5000)
+  }, 5000);
 }
