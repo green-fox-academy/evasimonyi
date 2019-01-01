@@ -18,12 +18,6 @@
   position: relative;
 }
 
-p {
-  position: relative;
-  width: 100%;
-  
-}
-
 .container .thumbnails {
   width: 100%;
   align-content: space-around;
