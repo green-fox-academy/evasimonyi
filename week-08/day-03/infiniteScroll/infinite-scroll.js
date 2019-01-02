@@ -20,7 +20,7 @@ let createBoxes = () => {
 
 createBoxes();
 
-const createTenBoxes = () => {
+let createTenBoxes = () => {
   for (let i = 0; i < 10; i++) {
     const div = document.createElement('div');
     div.setAttribute('style', `background-color: ${randomColour()}`)
