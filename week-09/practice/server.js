@@ -64,8 +64,7 @@ app.post('/doggos', (req, res) => {
 //torleshez a backend, postmanben csekkolni, utana frontend
 app.delete('/doggos', (req, res) => {
   const { id } = req.body;
-  const sql = 'SELECT * FROM doggos;';
-  conn.query(sql, (err, rows) => {
+  mySQLConnection.query(`DELETE FROM doggos WHERE id = ${id};`, (err, data) => {
     if (err) {
       console.log(err.message);
       res.status(500).json({
@@ -73,26 +72,10 @@ app.delete('/doggos', (req, res) => {
       });
       return;
     }
-    if (rows.find(data => data.id === id)) {
-      mySQLConnection.query(`DELETE FROM author WHERE aut_id = '${id}';`, (err, data) => {
-        if (err) {
-          console.log(err.message);
-          res.status(500).json({
-            error: 'Internal server error'
-          });
-          return;
-        }
-        res.json({
-          message: 'Succesfully deleted'
-        });
-      });
-    } else {
-      res.json({
-        message: 'Wrong ID'
-      });
-    }
+    res.json({
+      message: 'succesfully deleted'
+    });
   });
-
 });
 
 app.listen(PORT, () => {

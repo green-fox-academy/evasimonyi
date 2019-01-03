@@ -71,3 +71,16 @@ form.addEventListener('submit', (event) => {
   }
 });
 
+
+//backendhez irtam meg, mikor mar ment a postmannel
+tableDiv.addEventListener('click', (event) => {
+  const deleteXhR = new XMLHttpRequest();
+  deleteXhR.open('DELETE', '/doggos');
+  deleteXhR.setRequestHeader('Content-Type', 'application/json');
+  deleteXhR.send(JSON.stringify({
+    id: event.target.id
+  }));
+  deleteXhR.onload = () => {
+    console.log(JSON.parse(deleteXhR.responseText));
+  }
+});
