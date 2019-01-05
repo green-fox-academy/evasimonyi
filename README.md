@@ -1,2 +1,2 @@
-# sample
-This repo is for practicing
+# evasimonyi
+GFA Really syllabus: https://github.com/green-fox-academy/really-syllabus
