@@ -1,0 +1,49 @@
+body {
+  background-color: blue;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 20px;
+  color: rgb(82, 76, 76);
+  border: 1px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+tr, td, th {
+  width: 300px;
+  border: 1px solid gray;
+  padding: 20px;
+
+}
+
+tr, td {
+  height: 40px;
+}
+
+th {
+  background-color: black;
+  color: white;
+  height: 50px;
+  font-weight: lighter;
+}
+
+tbody>tr:nth-child(2n+1) {
+  background: lightgray;
+}
+
+tbody>tr:nth-child(2n) {
+  background: white;
+}
+
+.dollar::before {
+  content:"$";
+}
+
+.dollar::after {
+  content:".00";
+}
+
