@@ -29,6 +29,7 @@ th {
   color: white;
   height: 50px;
   font-weight: lighter;
+  border-bottom: 3px solid rgb(188, 188, 188);
 }
 
 tbody>tr:nth-child(2n+1) {
@@ -39,11 +40,11 @@ tbody>tr:nth-child(2n) {
   background: white;
 }
 
-.dollar::before {
-  content:"$";
+td[data-currency]::before{
+  content: "$ ";
 }
 
-.dollar::after {
-  content:".00";
+td[data-currency]::after{
+  content: ".00";
 }
 
