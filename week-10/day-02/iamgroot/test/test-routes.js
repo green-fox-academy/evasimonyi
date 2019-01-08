@@ -1,3 +1,5 @@
+'use strict';
+
 const test = require('tape');
 const request = require('supertest');
 const app = require('../routes');
@@ -9,7 +11,7 @@ test('TESTING GET /groot ENDPOINT WITHOUT QUERY', (t) => {
     .expect('Content-Type', /json/)
     .end((err, res) => {
       if (err) throw err;
-      t.same(res.body, { "err": "haho" }, 'nem volt query, jol lefutott');
+      t.same(res.body, { "error": "I am Groot!" }, 'nem volt query, jol lefutott');
       t.end();
     });
 });
