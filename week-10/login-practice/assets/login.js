@@ -2,7 +2,6 @@
 
 const form = document.querySelector('form');
 
-
 form.addEventListener('submit', (event) => {
   const { name, password } = form.elements;
   event.preventDefault();
