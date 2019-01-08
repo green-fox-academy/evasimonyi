@@ -18,65 +18,74 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.get('/author', (req, res) => {
-  const sql = 'SELECT * FROM author;';
-  conn.query(sql, (err, data) => {
-    if (err) {
-      console.log(err.message);
-      res.status(500).json({
-        error: 'Internal server error'
-      });
-      return;
-    }
-    res.json(data);
-  });
-});
+const getAllBooks = 'SELECT book_name, aut_name, cate_descrip, pub_name, book_price FROM ((book_mast INNER JOIN author ON author.aut_id = book_mast.aut_id) INNER JOIN category ON book_mast.cate_id = category.cate_id) INNER JOIN publisher ON book_mast.pub_id = publisher.pub_id';
 
 app.get('/books', (req, res) => {
-  const bookNames = 'SELECT book_name FROM book_mast;';
-  conn.query(bookNames, (err, data) => {
-    if (err) {
-      console.log(err.message);
-      res.status(500).json({
-        error: 'Internal server error'
-      });
-      return;
-    }
-    res.json(data);
-  });
+
+  const { book_name, aut_name, cate_descrip, pub_name, book_price } = req.query;
+
+  if (book_name) {
+    conn.query(`${getAllBooks} WHERE book_name LIKE '%${book_name}%';`, (err, data) => {
+      if (err) {
+        console.log(err.message);
+        res.status(500).send();
+      }
+      else {
+        res.json(data);
+      }
+    });
+  } else if (aut_name) {
+    conn.query(`${getAllBooks} WHERE aut_name LIKE '%${aut_name}%';`, (err, data) => {
+      if (err) {
+        console.log(err.message);
+        res.status(500).send();
+      }
+      else {
+        res.json(data);
+      }
+    });
+  } else if (cate_descrip) {
+    conn.query(`${getAllBooks} WHERE cate_descrip LIKE '%${cate_descrip}%';`, (err, data) => {
+      if (err) {
+        console.log(err.message);
+        res.status(500).send();
+      }
+      else {
+        res.json(data);
+      }
+    });
+  } else if (pub_name) {
+    conn.query(`${getAllBooks} WHERE pub_name LIKE '%${pub_name}%';`, (err, data) => {
+      if (err) {
+        console.log(err.message);
+        res.status(500).send();
+      }
+      else {
+        res.json(data);
+      }
+    });
+  } else if (book_price) {
+    conn.query(`${getAllBooks} WHERE book_price LIKE '%${book_price}%';`, (err, data) => {
+      if (err) {
+        console.log(err.message);
+        res.status(500).send();
+      }
+      else {
+        res.json(data);
+      }
+    });
+  } else {
+    conn.query(getAllBooks, (err, data) => {
+      if (err) {
+        console.log(err.message);
+        res.status(500).send();
+      }
+      else {
+        res.json(data);
+      }
+    });
+  }
 });
-
-// List the following data:
-// book title
-// authors name
-// category
-// publishers name
-// price
-// Return HTML that contains the list as a <table>
-
-app.get('/bookinfo', (req, res) => {
-  const getAllBooks = 'SELECT book_name, aut_name, cate_descrip, pub_name, book_price FROM ((book_mast INNER JOIN author ON author.aut_id = book_mast.aut_id) INNER JOIN category ON book_mast.cate_id = category.cate_id) INNER JOIN publisher ON book_mast.pub_id = publisher.pub_id;';
-
-  conn.query(bookNames, authorsNames, category, publisherNames, price, 
-    (err, data) => {
-    if (err) {
-      console.log(err.message);
-      res.status(500).json({
-        error: 'Internal server error'
-      });
-      return;
-    }
-    res.json(data);
-  });
-});
-
-// conn.end(err => {
-//   if (err) {
-//     console.log(err);
-//     return;
-//   }
-//   console.log('\n', 'Disconnected from database');
-// });
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
