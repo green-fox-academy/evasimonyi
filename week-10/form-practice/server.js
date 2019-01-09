@@ -29,16 +29,24 @@ app.post('/favanimal', (req, res) => {
   }
 });
 
+app.post('/dropdown', (req, res) => {
+  if (req.body.pickedAnimal) {
+    res.json({
+      message: req.body.pickedAnimal,
+    });
+  }
+});
+
 app.put('/bla', (req, res) => {
-  conn.query(`UPDATE table SET frontgarden = ${req.body.frontgarden}, backgarden, garage WHERE id = 2`, (err, data) => {
+  conn.query(`UPDATE table SET frontgarden = ${req.body.frontgarden}, backgarden =${req.body.backgarden}, garage WHERE id = 2`, (err, data) => {
     if (err) {
       res.json({
         error: err
       })
-    } 
+    }
   }
-)
-res.json({asd:'dfgh'})
+  )
+  res.json({ asd: 'dfgh' })
 })
 
-  app.listen(PORT, () => { console.log(`App is listening on port: ${PORT}`); });
+app.listen(PORT, () => { console.log(`App is listening on port: ${PORT}`); });

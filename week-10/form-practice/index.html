@@ -11,31 +11,55 @@
 <body>
 
   <form class="radiobutton">
-    <div style="margin: 30px">Szeretnel egy kutyust? <br>
-      <input type="radio" name="choose" id="yes" value="yes">yes <br>
-      <input type="radio" name="choose" id="no" value="no">no <br>
-      <input type="radio" name="choose" id="idontknow" value="idontknow1">idontknow1 <br>
-      <input type="radio" name="choose" id="idontknow" value="idontknow2">idontknow2 <br>
-      <input type="radio" name="choose" id="idontknow" value="idontknow3">idontknow3 <br>
-      <input type="radio" name="choose" id="idontknow" value="idontknow4">idontknow4 <br>
-      <input type="radio" name="choose" id="idontknow" value="idontknow5">idontknow5 <br>
+    <div style="margin: 30px">Szeretnel egy kutyust?
+      <br>
+      <input type="radio" name="choose" id="yes" value="yes">yes
+      <br>
+      <input type="radio" name="choose" id="no" value="no">no
+      <br>
+      <input type="radio" name="choose" id="idontknow" value="idontknow1">idontknow1
+      <br>
+      <input type="radio" name="choose" id="persze" value="persze">persze
+      <br>
+      <br>
+      <input type="submit" style="margin: 10px">
     </div>
-    <input type="submit" style="margin: 10px"> 
   </form>
   <h3>Your answer is</h3>
   <h2 id="radiobuttonAnswer"></h2>
 
-  <form class="checkbox" style="margin: 30px">Kedvenc allatod/allataid? <br>
-    <input type="checkbox" name="allat" value="cica">cica <br>
-    <input type="checkbox" name="allat" value="kutya">kutya <br>
-    <input type="checkbox" name="allat" value="papagaj">papagaj <br>
-    <input type="checkbox" name="allat" value="elefant">elefant <br>
-    <input type="checkbox" name="allat" value="eger">eger <br>
-    <input type="submit" style="margin: 10px"> 
+  <form class="checkbox" style="margin: 30px">Kedvenc allatod/allataid?
+    <br>
+    <input type="checkbox" name="allat" value="cica">cica
+    <br>
+    <input type="checkbox" name="allat" value="kutya">kutya
+    <br>
+    <input type="checkbox" name="allat" value="papagaj">papagaj
+    <br>
+    <input type="checkbox" name="allat" value="elefant">elefant
+    <br>
+    <input type="checkbox" name="allat" value="eger">eger
+    <br>
+    <input type="submit" style="margin: 10px">
   </form>
 
   <h3>Your answers are</h3>
   <h2 id="checkboxAnswer"></h2>
+
+  <form class="dropdownAnimal">Select your fav animal
+    <select name="kedvencallat">
+      <option name="kedvencallat" value="kutya">kutya</option>
+      <option name="kedvencallat" value="cica">cica</option>
+      <option name="kedvencallat" value="eger">eger</option>
+      <option name="kedvencallat" value="elefant">elefant</option>
+      <option name="kedvencallat" value="delfin">delfin</option>
+    </select>
+    <input type="submit">
+  </form>
+
+  <h3>Your answers are</h3>
+  <h2 id="dropdownAnswer"></h2>
+
   <script src="./assets/frontend.js"></script>
 </body>
 

@@ -23,6 +23,7 @@ formCheck.addEventListener('submit', (event) => {
     // console.log(response);
     const h2 = document.querySelector('#checkboxAnswer');
     h2.textContent = response.message;
+    h2.style.color = 'blue'
   }
 });
 
@@ -33,7 +34,6 @@ formRadio.addEventListener('submit', (event) => {
   event.preventDefault();
   const postXHR = new XMLHttpRequest();
   let pickedAnswer = formRadio.elements.choose.value;
-  // console.log(pickedAnswer);
   postXHR.open('POST', '/favanimal');
   postXHR.setRequestHeader('Content-Type', 'application/json');
   postXHR.send(JSON.stringify({
@@ -44,5 +44,26 @@ formRadio.addEventListener('submit', (event) => {
     const response = JSON.parse(postXHR.responseText);
     const h2 = document.querySelector('#radiobuttonAnswer');
     h2.textContent = response.message;
+    h2.style.color = 'green'
+  }
+});
+
+
+const dropdownAnimalForm = document.querySelector('.dropdownAnimal');
+
+dropdownAnimalForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const postXHR = new XMLHttpRequest();
+  let pickedAnimal = dropdownAnimalForm.elements.kedvencallat.value;
+  postXHR.open('POST', '/dropdown');
+  postXHR.setRequestHeader('Content-Type', 'application/json');
+  postXHR.send(JSON.stringify({
+    pickedAnimal
+  }));
+  postXHR.onload = () => {
+    const response = JSON.parse(postXHR.responseText);
+    const h2 = document.querySelector('#dropdownAnswer');
+    h2.textContent = response.message;
+    h2.style.color = 'purple'
   }
 });
