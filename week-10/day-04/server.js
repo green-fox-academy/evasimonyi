@@ -34,6 +34,8 @@ app.get('/allquestions', (req, res) => {
   });
 });
 
+const showRandomQuestion = 'select * from questions order by rand() limit 1;';
+
 app.get('/showquestion', (req, res) => {
   let randomnumber = Math.floor(Math.random() * 10) + 1;
   mySQLConnection.query(`SELECT question FROM questions WHERE id = ${randomnumber};`, (err, data) => {
