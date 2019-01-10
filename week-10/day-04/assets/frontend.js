@@ -13,7 +13,7 @@ xhr.onload = () => {
   if (xhr.status == "200") {
     const res = JSON.parse(xhr.responseText);
     // console.log(res);
-  } 
+  }
 }
 xhr.send();
 
@@ -24,6 +24,14 @@ let getnewquestion = () => {
     if (newxhr.status == "200") {
       const res = JSON.parse(newxhr.responseText);
       console.log(res[0].is_correct);
+      answer1.classList.remove('green');
+      answer2.classList.remove('green');
+      answer3.classList.remove('green');
+      answer4.classList.remove('green');
+      answer1.classList.remove('red');
+      answer2.classList.remove('red');
+      answer3.classList.remove('red');
+      answer4.classList.remove('red');
       question.innerHTML = res[0].question;
       answer1.innerHTML = res[0].answer;
       answer1.setAttribute('iscorrect', res[0].is_correct);
@@ -33,20 +41,37 @@ let getnewquestion = () => {
       answer3.setAttribute('iscorrect', res[2].is_correct);
       answer4.innerHTML = res[3].answer;
       answer4.setAttribute('iscorrect', res[3].is_correct);
-    } 
-  }
+      buttons.forEach(element => {
+        element.disabled = false;
+      });
+    };
+  };
   newxhr.send();
-}
+};
 
 getnewquestion();
 
+const score = document.querySelector('.score');
+let counter = 1;
+
+let addToCounter = () => {
+  score.innerHTML = counter++;
+};
 
 buttons.forEach(element => {
   element.addEventListener('click', () => {
-    if (event.target.getAttribute('iscorrect') === '1' ) {
-      getnewquestion();
+    setTimeout(getnewquestion, 3000);
+    if (event.target.getAttribute('iscorrect') === '1') {
+      event.target.classList.add('green');
+      buttons.forEach(element => {
+        element.disabled = true;
+      });
+      setTimeout(addToCounter, 2000);
     } else {
-      console.log('nemjo')
+      event.target.classList.add('red');
+      buttons.forEach(element => {
+        element.disabled = true;
+      });
     }
   });
 });

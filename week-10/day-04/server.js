@@ -34,7 +34,6 @@ app.get('/allquestions', (req, res) => {
   });
 });
 
-
 app.get('/showquestion', (req, res) => {
   let randomnumber = Math.floor(Math.random() * 10) + 1;
   mySQLConnection.query(`SELECT question FROM questions WHERE id = ${randomnumber};`, (err, data) => {
@@ -56,8 +55,8 @@ app.get('/showquestion', (req, res) => {
         console.log(data2);
         res.json(data2);
       });
-    }
-  })
+    };
+  });
 })
 
 app.listen(PORT, () => { console.log(`App is listening on port: ${PORT}`); });
