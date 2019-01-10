@@ -34,31 +34,62 @@ app.get('/allquestions', (req, res) => {
   });
 });
 
-const showRandomQuestion = 'select * from questions order by rand() limit 1;';
+// const showRandomQuestion = 'select * from questions order by rand() limit 1;';
 
-app.get('/showquestion', (req, res) => {
-  let randomnumber = Math.floor(Math.random() * 10) + 1;
-  mySQLConnection.query(`SELECT question FROM questions WHERE id = ${randomnumber};`, (err, data) => {
+// app.get('/showquestion', (req, res) => {
+//   let randomnumber = Math.floor(Math.random() * 10) + 1;
+//   mySQLConnection.query(`SELECT question FROM questions WHERE id = ${randomnumber};`, (err, data) => {
+//     if (err) {
+//       console.log(err.message);
+//       res.status(500).json({
+//         error: 'Internal server error 1'
+//       });
+//       return;
+//     } else {
+//       mySQLConnection.query(`SELECT * FROM questions INNER JOIN answers ON questions.id = answers.question_id WHERE questions.id = ${randomnumber} AND answers.question_id = ${randomnumber};`, (err, data2) => {
+//         if (err) {
+//           console.log(err.message);
+//           res.status(500).json({
+//             error: 'Internal server error 2'
+//           });
+//           return;
+//         }
+//         console.log(data2);
+//         res.json(data2);
+//       });
+//     };
+//   });
+// })
+
+const selectRandomQuestion = 'select * from questions order by rand() limit 1;';
+
+app.get('/api/game', (req, res) => {
+  mySQLConnection.query(selectRandomQuestion, (err, data) => {
     if (err) {
       console.log(err.message);
-      res.status(500).json({
-        error: 'Internal server error 1'
-      });
-      return;
+      res.status(500).send();
     } else {
-      mySQLConnection.query(`SELECT * FROM questions INNER JOIN answers ON questions.id = answers.question_id WHERE questions.id = ${randomnumber} AND answers.question_id = ${randomnumber};`, (err, data2) => {
-        if (err) {
-          console.log(err.message);
-          res.status(500).json({
-            error: 'Internal server error 2'
-          });
-          return;
-        }
-        console.log(data2);
-        res.json(data2);
-      });
-    };
+      getAnswerOptions(req, res, data);
+    }
   });
-})
+});
+
+const selectAnswerOptions = 'select * from answers where question_id=?;';
+
+const getAnswerOptions = (req, res, data) => {
+  mySQLConnection.query(selectAnswerOptions, data[0].id, (err, answersData) => {
+    if (err) {
+      console.log(err.message);
+      res.status(500).send();
+    } else {
+      const questionObj = {
+        'id': data[0].id,
+        'question': data[0].question,
+        'answers': answersData
+      }
+      res.json(questionObj)
+    }
+  });
+}
 
 app.listen(PORT, () => { console.log(`App is listening on port: ${PORT}`); });
