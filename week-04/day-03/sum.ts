@@ -16,7 +16,7 @@ Run them
 Fix your code if needed */
 
 'use strict';
-export {};
+export { };
 
 var test = require('tape');
 
@@ -27,39 +27,39 @@ class Sum {
 	}
 }
 
-let newSum = new Sum ();
+let newSum = new Sum();
 let listOfNums = [1, 2, 3, 4];
 
 console.log(newSum.getSum(listOfNums))
 
-test('returns sum of numbers in array', function(t) {
-    const actual = newSum.getSum(listOfNums);
-    const expected = 10;
-  
-    t.equal(actual, expected);
-    t.end();
-}); 
+test('returns sum of numbers in array', function (t) {
+	const actual = newSum.getSum(listOfNums);
+	const expected = 10;
+
+	t.equal(actual, expected);
+	t.end();
+});
 
 let listOfNumsEmpty = [];
-test('returns sum of numbers in array', function(t) {
+test('returns sum of numbers in array', function (t) {
 	const actual = newSum.getSum(listOfNumsEmpty);
 	const expected = 0;
 
 	t.equal(actual, expected);
 	t.end();
-}); 
+});
 
 let listOfNumsOne = [4];
-test('returns sum of numbers in array', function(t) {
+test('returns sum of numbers in array', function (t) {
 	const actual = newSum.getSum(listOfNumsOne);
 	const expected = 4;
 
 	t.equal(actual, expected);
 	t.end();
-}); 
+});
 
 let listOfNumsNull = [null];
-test('returns sum of numbers in array', function(t) {
+test('returns sum of numbers in array', function (t) {
 	const actual = newSum.getSum(listOfNumsNull);
 	const expected = 0;
 

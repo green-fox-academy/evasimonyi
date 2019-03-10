@@ -1,110 +1,110 @@
 'use strict';
-export {};
+export { };
 
 class Person {
-    name: string;
-    age: number;
-    gender: string;
+	name: string;
+	age: number;
+	gender: string;
 
-    constructor (name = 'Jane Doe', age = 30, gender = 'female') {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
-    };
+	constructor(name = 'Jane Doe', age = 30, gender = 'female') {
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	};
 
-    Introduce() {
-        console.log('Hi, I\'m ' + this.name + 'a ' + this.age + ' year old ' + this.gender);
-    };
-      
-    GetGoal() {
-        console.log("My goal is: Live for the moment!");
-    };
+	Introduce() {
+		console.log('Hi, I\'m ' + this.name + 'a ' + this.age + ' year old ' + this.gender);
+	};
+
+	GetGoal() {
+		console.log("My goal is: Live for the moment!");
+	};
 };
-    
+
 class Student extends Person {
-    previousOrganization: string; //the name of the student’s previous company / school
-    skippedDays: number; //the number of days skipped from the course
-    
-    constructor (name = 'Jane Doe', age = 30, gender = 'female', previousOrganization = 'The School of Life', skippedDays = 0) {
-        super (name, age, gender);
-        this.previousOrganization = previousOrganization;
-        this.skippedDays = skippedDays;
-    };
+	previousOrganization: string; //the name of the student’s previous company / school
+	skippedDays: number; //the number of days skipped from the course
 
-    Introduce() {
-        console.log('Hi, I\'m ' + this.name + ' a ' + this.age + ' year old ' + this.gender + ' from ' + this.previousOrganization + ' who skipped ' + this.skippedDays + ' days from the course already.');
-    };
+	constructor(name = 'Jane Doe', age = 30, gender = 'female', previousOrganization = 'The School of Life', skippedDays = 0) {
+		super(name, age, gender);
+		this.previousOrganization = previousOrganization;
+		this.skippedDays = skippedDays;
+	};
 
-    GetGoal() {
-        console.log("Be a junior software developer.");
-    };
+	Introduce() {
+		console.log('Hi, I\'m ' + this.name + ' a ' + this.age + ' year old ' + this.gender + ' from ' + this.previousOrganization + ' who skipped ' + this.skippedDays + ' days from the course already.');
+	};
 
-    SkipDays(numberOfDays){
-        return this.skippedDays + numberOfDays
-    }; 
+	GetGoal() {
+		console.log("Be a junior software developer.");
+	};
+
+	SkipDays(numberOfDays) {
+		return this.skippedDays + numberOfDays
+	};
 }
- 
+
 class Mentor extends Person {
-    level: string; //the level of the mentor (junior / intermediate / senior)
+	level: string; //the level of the mentor (junior / intermediate / senior)
 
-    constructor (name = 'Jane Doe', age = 30, gender = 'female', level = 'intermediate') {
-        super (name, age, gender);
-        this.level = level;
-    }
+	constructor(name = 'Jane Doe', age = 30, gender = 'female', level = 'intermediate') {
+		super(name, age, gender);
+		this.level = level;
+	}
 
-    GetGoal() {
-        console.log("Educate brilliant junior software developers.");
-    };
+	GetGoal() {
+		console.log("Educate brilliant junior software developers.");
+	};
 
-    Introduce() {
-        console.log('Hi, I\'m ' + this.name + ' a ' + this.age + ' year old ' + this.gender + this.level + ' mentor');
-    };
-}    
+	Introduce() {
+		console.log('Hi, I\'m ' + this.name + ' a ' + this.age + ' year old ' + this.gender + this.level + ' mentor');
+	};
+}
 
 class Sponsor extends Person {
-    company: string; // name of the company
-    hiredStudents: number; //number of students hired
+	company: string; // name of the company
+	hiredStudents: number; //number of students hired
 
-    constructor (name = 'Jane Doe', age = 30, gender = 'female', company = 'Google', hiredStudents = 0) {
-        super (name, age, gender);
-        this.company = company;
-        this.hiredStudents = hiredStudents;
-    };
+	constructor(name = 'Jane Doe', age = 30, gender = 'female', company = 'Google', hiredStudents = 0) {
+		super(name, age, gender);
+		this.company = company;
+		this.hiredStudents = hiredStudents;
+	};
 
-    Introduce() {
-        console.log('Hi, I\'m ' + this.name + ', a ' + this.age + ' old ' + this.gender + ' who represents ' + this.company + ' and hired ' + this.hiredStudents + ' students so far.');
-    }
+	Introduce() {
+		console.log('Hi, I\'m ' + this.name + ', a ' + this.age + ' old ' + this.gender + ' who represents ' + this.company + ' and hired ' + this.hiredStudents + ' students so far.');
+	}
 
-    Hire () {
-        return this.hiredStudents + 1 ;
-    };
+	Hire() {
+		return this.hiredStudents + 1;
+	};
 
-    GetGoal() {
-        console.log("Hire brilliant junior software developers.");
-    };
+	GetGoal() {
+		console.log("Hire brilliant junior software developers.");
+	};
 
 }
 
 class Cohort {
-    name: string; //the name of the cohort
-    students = 0; //a list of Students
-    mentors = 0; //a list of Mentors
+	name: string; //the name of the cohort
+	students = 0; //a list of Students
+	mentors = 0; //a list of Mentors
 
-    constructor(name){
-        this.name = name;
-    };
+	constructor(name) {
+		this.name = name;
+	};
 
-    addStudent(Student) {
-       this.students ++ ;//adds the given Student to students list
-    };
-    
-    addMentor(Mentor) {
-        this.mentors ++; //adds the given Mentor to mentors list
-    };
+	addStudent(Student) {
+		this.students++;//adds the given Student to students list
+	};
 
-    info() {
-        console.log('The ' + this.name + ' cohort has ' + this.students + ' students and ' + this.mentors + ' mentors.');
-    };
+	addMentor(Mentor) {
+		this.mentors++; //adds the given Mentor to mentors list
+	};
+
+	info() {
+		console.log('The ' + this.name + ' cohort has ' + this.students + ' students and ' + this.mentors + ' mentors.');
+	};
 }
 
 //Test input
@@ -131,17 +131,17 @@ people.push(elon);
 student.SkipDays(3);
 
 for (let i = 0; i < 5; i++) {
-    elon.Hire();
+	elon.Hire();
 }
 
 for (let i = 0; i < 3; i++) {
-    sponsor.Hire();
+	sponsor.Hire();
 }
 
-people.forEach (function(person) {
-    person.Introduce();
-    person.GetGoal();
-} );
+people.forEach(function (person) {
+	person.Introduce();
+	person.GetGoal();
+});
 
 let awesome = new Cohort("AWESOME");
 awesome.addStudent(student);
