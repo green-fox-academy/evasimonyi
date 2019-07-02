@@ -3,13 +3,13 @@
 // Create a function called putSaturn() which has list parameter and returns the correct list.
 // bonus for using some built in methods
 'use strict';
-export {};
+export { };
 
 let planetList = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Uranus', 'Neptune'];
 
-function putSaturn(planetList) {
-    planetList.splice(5, 0, 'Saturn');
-    return planetList;
+function putSaturn(list: string[]): string[] {
+  list.splice(5, 0, 'Saturn');
+  return list;
 };
 
 // Expected output: "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Uranus", "Neptune", "Saturn"
