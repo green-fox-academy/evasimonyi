@@ -16,4 +16,3 @@ function putSaturn(list: string[]): string[] {
 
 console.log(putSaturn(planetList));
 
-export = putSaturn;
