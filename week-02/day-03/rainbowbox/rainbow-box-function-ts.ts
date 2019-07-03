@@ -13,7 +13,7 @@ const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
 let size: number = 30;
 let colour = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 let colourIndex = 0;
-canvas.width = 600;
+canvas.width = 400;
 canvas.height = 400;
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height
@@ -25,10 +25,92 @@ function draw(size: number, colourArray: string[]) {
   ctx.fillRect(x, y, size, size);
 };
 
-for (let i: number = 0; i < size; i++) {
+
+for (let i: number = 0; i < colour.length; i++) {
   draw(size, colour);
   colourIndex = colourIndex + 1;
   x += size;
   y += size;
+  size = + size;
+};
+
+x = (canvasWidth / 2) - (size / 2);
+y = (canvasHeight / 2) - (size / 2);
+colourIndex = 0;
+
+for (let j: number = 0; j < colour.length; j++) {
+  draw(size, colour);
+  colourIndex = colourIndex + 1;
+  x = x - size;
+  y += size;
+  size = + size;
+};
+
+x = (canvasWidth / 2) - (size / 2);
+y = (canvasHeight / 2) - (size / 2);
+colourIndex = 0;
+
+for (let k: number = 0; k < colour.length; k++) {
+  draw(size, colour);
+  colourIndex = colourIndex + 1;
+  x += size;
+  y = y - size;
+  size = + size;
+};
+
+x = (canvasWidth / 2) - (size / 2);
+y = (canvasHeight / 2) - (size / 2);
+colourIndex = 0;
+
+for (let l: number = 0; l < colour.length; l++) {
+  draw(size, colour);
+  colourIndex = colourIndex + 1;
+  x = x - size;
+  y = y - size;
+  size = + size;
+};
+
+
+x = (canvasWidth / 2) - (size / 2);
+y = (canvasHeight / 2) - (size / 2);
+colourIndex = 0;
+
+for (let m: number = 0; m < colour.length; m++) {
+  draw(size, colour);
+  colourIndex = colourIndex + 1;
+  x = x - size;
+  size = + size;
+};
+
+x = (canvasWidth / 2) - (size / 2);
+y = (canvasHeight / 2) - (size / 2);
+colourIndex = 0;
+
+for (let n: number = 0; n < colour.length; n++) {
+  draw(size, colour);
+  colourIndex = colourIndex + 1;
+  y = y - size;
+  size = + size;
+};
+
+x = (canvasWidth / 2) - (size / 2);
+y = (canvasHeight / 2) - (size / 2);
+colourIndex = 0;
+
+for (let m: number = 0; m < colour.length; m++) {
+  draw(size, colour);
+  colourIndex = colourIndex + 1;
+  x = x + size;
+  size = + size;
+};
+
+x = (canvasWidth / 2) - (size / 2);
+y = (canvasHeight / 2) - (size / 2);
+colourIndex = 0;
+
+for (let o: number = 0; o < colour.length; o++) {
+  draw(size, colour);
+  colourIndex = colourIndex + 1;
+  y = y + size;
   size = + size;
 };
