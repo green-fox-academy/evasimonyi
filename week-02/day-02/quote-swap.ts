@@ -1,5 +1,5 @@
 'use strict';
-export {};
+export { };
 
 // Accidentally I messed up this quote from Richard Feynman.
 // Two words are out of place
@@ -9,7 +9,7 @@ export {};
 
 let words: string[] = ['What', 'I', 'do', 'create,', 'I', 'cannot', 'not', 'understand.'];
 
-console.log(quoteSwap(words));
+// console.log(quoteSwap(words));
 
 // Expected output: "What I cannot create I do not understand."
 // no idea

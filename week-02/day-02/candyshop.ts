@@ -1,5 +1,5 @@
 'use strict';
-export {};
+export { };
 
 let shopItems: any[] = ['Cupcake', 2, 'Brownie', false];
 
@@ -9,16 +9,14 @@ let shopItems: any[] = ['Cupcake', 2, 'Brownie', false];
 // Create a function called sweets() which takes the list as a parameter.
 // Expected output: "Cupcake", "Croissant", "Brownie", "Ice cream"
 
-function sweets (corrected: string[]): string[] {
-    for (var i = 0; i < corrected.length; i++)
-    if (shopItems[i] == 2)
-        shopItems[i] = 'Croissant';
-    else if (shopItems[i] == false)
-        shopItems [i] = 'Ice cream';
-    return shopItems;
+function sweets(corrected: string[]): string[] {
+	for (let i = 0; i < corrected.length; i++)
+		if (shopItems[i] == 2)
+			shopItems[i] = 'Croissant';
+		else if (shopItems[i] == false)
+			shopItems[i] = 'Ice cream';
+	return shopItems;
 }
 
 console.log(sweets(shopItems));
 export = sweets;
-
-
