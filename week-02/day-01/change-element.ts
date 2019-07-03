@@ -2,16 +2,16 @@
 // -  Change the 8 to 4 with the `.map` method 
 // -  Print the fourth element as a test
 'use strict';
-export {};
+export { };
 
-let numlist = [1, 2, 3, 8, 5, 6];
+let numlist: any = [1, 2, 3, 8, 5, 6];
 
-numlist.map(function(number) {
-  return (number == 8) ? 4 : number; 
+let newList = numlist.map(function (value: number) {
+  if (value === 8) {
+    return 4;
+  }
+  return value;
 });
 
-let numList2 = 
-console.log(numlist[3]);
-
-//doesnt work
-// nem kell
+console.log(newList[3]);
+console.log(newList);

@@ -3,11 +3,10 @@
 // -  Log the result of `doubling(baseNum)` to the console
 
 'use strict';
-export {};
+export { };
 
 var baseNum: number = 123;
-function doubling (a:number) {
+function doubling(a: number) {
      return a * 2
-
 };
-console.log(doubling (baseNum));
+console.log(doubling(baseNum));

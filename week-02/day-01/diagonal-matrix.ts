@@ -12,21 +12,21 @@
 // ** Relax, a matrix is just like an array
 
 'use strict';
-export {};
+export { };
 
-let size : number = 5;
-let matrix : number [][] = [];
+let size: number = 8;
+let matrix: number[][] = [];
 
-for (let i : number = 0; i < size; i++) {
-    matrix [i] = [];
+for (let i: number = 0; i < size; i++) {
+    matrix[i] = [];
 }
 
-for (let i : number = 0; i < size; i++) {
-    for  (let k : number = 0; k < size; k ++) {
-        matrix [i][k] = 0;
-        matrix [i][size -1 -i] = 1;
+for (let i: number = 0; i < size; i++) {
+    for (let k: number = 0; k < size; k++) {
+        matrix[i][k] = 0;
+        matrix[i][size - 1 - i] = 1;
     }
 }
 
 
-console.log (matrix);
+console.log(matrix);
