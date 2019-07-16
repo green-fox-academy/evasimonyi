@@ -2,7 +2,7 @@
 
 export abstract class Instrument {
   protected name: string;
-  abstract play(): void;
+  abstract play(): string;
   constructor(name: string) {
     this.name = name;
   }
