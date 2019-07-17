@@ -1,14 +1,14 @@
 // Create a method that decrypts reversed-lines.txt
 
 'use strict';
-export {};
+export { };
 
-declare function require (path: string);
+declare function require(path: string): any;
 const fs = require('fs');
 
 let lines = fs.readFileSync('reversed-lines.txt', 'utf-8');
 
-function reverse (lines){
+function reverse(lines: any): any {
     return lines.split('').reverse().join('');
 }
 
