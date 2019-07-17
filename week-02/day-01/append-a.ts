@@ -8,14 +8,13 @@ export { };
 var animals: string[] = ["koal", "pand", "zebr"];
 
 function appendA(corrected: string[]): string[] {
-    var animals2: string[] = [];
-    for (let i: number = 0; i < corrected.length; i++) {
-        animals2.push(corrected[i] + 'a');
-    };
-    return animals2;
+	var animals2: string[] = [];
+	for (let i: number = 0; i < corrected.length; i++) {
+		animals2.push(corrected[i] + 'a');
+	};
+	return animals2;
 }
 
 console.log(appendA(animals));
 
 appendA(animals);
-
