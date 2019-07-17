@@ -11,8 +11,7 @@ listA.forEach(function (item) {
   }
 });
 
-
-var index = listB.indexOf('Durian');
+let index = listB.indexOf('Durian');
 
 if (index > -1) {
   listB.splice(index, 1);
