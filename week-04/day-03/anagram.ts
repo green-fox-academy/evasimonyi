@@ -4,17 +4,15 @@
 'use strict';
 export { };
 
-var test = require('tape');
+let test = require('tape');
 
 function isThisAnAnagram(word1: string, word2: string): boolean {
-	for (let i = 0; i < word1.length; i++) {
-		return word1.split('').sort().join('').charAt(i) === word2.split('').sort().join('').charAt(i)
-	}
+	return word1.split('').sort().join('') === word2.split('').sort().join('');
 }
 
-console.log(isThisAnAnagram('blaa', 'abal'));
+// console.log(isThisAnAnagram('blaa', 'abal'));
 
-test('returns true if anagram', function (t) {
+test('returns true if anagram', function (t: any) {
 	const actual = isThisAnAnagram('blaa', 'abal');
 	const expected = true;
 
