@@ -1,12 +1,22 @@
-.header {
-  background-color: purple;
-  text-align: left;
+body {
+  margin: 0;
+  display: flex;
   justify-content: center;
+}
+
+.main-container {
+  width: 80%;
+  height: 100vh;
+}
+
+.header-container {
+  background-color: purple;
   padding: 20px;
+  position: sticky;
+  top: 0;
 }
 
 .cyan {
-  position: relative;
   display: inline-block;
   background: cyan;
   margin-right: 5px;
@@ -16,25 +26,15 @@
 
 .container {
   display: flex;
-  height: 300px;
-  width: 100;
-  align-items: center;
-  justify-content: stretch;
+  height: 100%;
 }
 
 .yellow {
   background-color: yellow;
   flex-grow: 3;
-  height: stretch;
-  width: 70%;
 }
 
 .green {
   background-color: green;
   flex-grow: 1;
-  height: stretch;
-  width: 30%;
 }
-
-
-
