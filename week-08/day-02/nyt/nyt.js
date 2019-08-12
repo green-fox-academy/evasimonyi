@@ -20,14 +20,14 @@ xhr.onload = () => {
       //a cim ala jon a snippet, aminek letrehozok egy divet
       const snippet = document.createElement('div');
       snippet.innerText = e.snippet;
-      //cim legalulra
+      //datum legalulra, konvertalva
       const pubdate = document.createElement('div');
-      pubdate.innerText = e.pub_date;
+      pubdate.innerText = new Date(e.pub_date).toDateString();
       //mindet beleteszem a divbe
       div.appendChild(links);
       div.appendChild(snippet);
       div.appendChild(pubdate);
-      
+
       container.appendChild(div);
     });
   };
