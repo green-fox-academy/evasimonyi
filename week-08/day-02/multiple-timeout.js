@@ -8,13 +8,13 @@
 
 const printFruits = () => {
   console.log('apple');
-  setTimeout(()=> {
+  setTimeout(() => {
     console.log('pear');
   }, 1000);
-  setTimeout(()=> {
+  setTimeout(() => {
     console.log('melon');
   }, 3000);
-  setTimeout(()=> {
+  setTimeout(() => {
     console.log('grapes');
   }, 5000);
 }
