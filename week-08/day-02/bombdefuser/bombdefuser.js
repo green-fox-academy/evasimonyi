@@ -15,10 +15,15 @@ const displayRemainingSeconds = setInterval(() => {
   if (display.textContent >= 1) {
     display.textContent -= 1;
   }
+  else {
+    button.removeEventListener('click', myFunction);
+  }
 }, 1000);
 
-button.onclick = () => {
+let defusingBomb = () => {
   clearTimeout(timeout);
   clearInterval(displayRemainingSeconds);
   display.textContent = "Bomb defused";
 };
+
+button.addEventListener('click', defusingBomb);
