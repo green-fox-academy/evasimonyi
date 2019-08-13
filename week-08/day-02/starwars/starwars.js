@@ -14,7 +14,9 @@ const movieRequest = new XMLHttpRequest();
 characterRequest.onload = () => {
   if (characterRequest.status === 200) {
     const characters = JSON.parse(characterRequest.responseText);
-    console.log(characters);
+    characters.results.forEach((element) => {
+      // console.log(element.name)
+    })
   }
 }
 
@@ -24,7 +26,7 @@ characterRequest.send();
 movieRequest.onload = () => {
   if (movieRequest.status === 200) {
     const moviesList = JSON.parse(movieRequest.responseText);
-    console.log(moviesList);
+    // console.log(moviesList);
   }
 }
 
@@ -47,35 +49,38 @@ const sendHttpRequest = (method, url, callback) => {
 const charUl = document.createElement('ul');
 characters.appendChild(charUl);
 
-let searchedCharacter = document.querySelector('#name').value;
-console.log(searchedCharacter);
+let searchedCharacter = document.querySelector('input').value;
 
 sendHttpRequest('GET', `${apiURL}people/?search=${searchedCharacter}`, (response) => {
   const content = response.results;
   content.forEach(e => {
-    console.log(e.name)
     const newChar = document.createElement('li');
     newChar.innerHTML = e.name;
     charUl.appendChild(newChar);
   });
+  return charUl;
 })
 
-// it doesnt work:
-button.onclick = () => {
+button.onclick = (event) => {
+  event.preventDefault();
+  const ul = document.querySelector('ul');
   sendHttpRequest('GET', `${apiURL}people/?search=${searchedCharacter}`, (response) => {
     const content = response.results;
-    console.log(content);
+    ul.innerHTML = '';
     content.forEach(e => {
-      if (e.name === searchedCharacter) {
-        console.log(e.name)
-        const newChar = document.createElement('li');
-        newChar.innerHTML = e.name;
-        charUl.appendChild(newChar);
-      } else {
-        console.log('there is no character like that in sw universe');
+      if (e.name.toLowerCase().includes(document.querySelector('input').value)) {
+        const matchinChar = document.createElement('li');
+        matchinChar.textContent = e.name;
+        ul.appendChild(matchinChar)
       }
+      // else {
+      //   console.log('there is no character like that in sw universe');
+      // }
     });
   })
 }
 
-
+// console.log(charUl)
+// charUl.onclick = (event) => {
+//   console.log(event.target.innerText)
+// }
