@@ -1,10 +1,14 @@
-.container {
-  justify-content: center;
-  align-content: center;
+main {
+  display: block;
   text-align: center;
+  font-family: Helvetica;
 }
 
-.article {
+h1 {
+  text-transform: uppercase;
+}
+
+article {
   display: inline-block;
   width: 80%;
   margin: 10px;
@@ -12,7 +16,6 @@
   line-height: 2em;
   border: solid black 2px;
   background-color: whitesmoke;
-  font-family: Helvetica;
   text-align: justify;
   white-space: nowrap;
   overflow: hidden;
