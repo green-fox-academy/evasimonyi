@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express');
 const app = express();
 const PORT = 3000;
@@ -16,7 +18,6 @@ const cocktails = [
   { name: 'VIRGIN MOJITO', price: 990, contains: ['sugar', 'lime juice', 'soda water'], isAlcoholic: false },
   { name: 'SAFE SEX ON THE BEACH', price: 990, contains: ['peach schnapps', 'orange juice', 'cranberry juice'], isAlcoholic: false },
 ];
-
 
 const alcoholList = ['gin', 'vodka', 'rum', 'tequila'];
 
@@ -45,4 +46,3 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
-
