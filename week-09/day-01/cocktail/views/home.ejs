@@ -10,13 +10,13 @@
 </head>
 
 <body>
-    <h1>alcohol list</h1>
-    <ul class="alcohol-list">
+    <h1>Alcohol list</h1>
+    <div class="alcohol-list">
+        <button>all</button>
         <% alcoholList.forEach(function(item) { %>
-        <li><%= item %></li>
+        <button><%= item %></button>
         <% }); %>
-    </ul>
-    <h1>Cocktails</h1>
+    </div>
     <table>
         <thead>
             <tr>
@@ -24,11 +24,17 @@
                 <th>Price</th>
             </tr>
         </thead>
+
         <tbody>
             <% cocktails.forEach(function(item) { %>
             <tr>
+                <% if (item.isAlcoholic === false) { %>
+                <td><%= item.name %> (non- alcoholic)<br> <%= item.contains %> </td>
+                <td><%= item.price %> Ft</td>
+                <% } else { %>
                 <td><%= item.name %> <br> <%= item.contains %> </td>
                 <td><%= item.price %> Ft</td>
+                <% } %>
                 <% }); %>
             </tr>
         </tbody>

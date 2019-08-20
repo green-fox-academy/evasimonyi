@@ -1,6 +1,19 @@
-table {
-  width: 600px;
+body {
   font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h1, div {
+  flex-basis: 100%;
+  text-align: center;
+  margin-bottom: 1%;
+}
+
+table {
+  width: 70%;
+  margin-bottom: 2rem;
 }
 
 th {
@@ -9,13 +22,18 @@ th {
   color: white;
   font-size: 18px;
   text-transform: uppercase;
+  width: 75%;
 }
 
 th, td {
   border: 1px solid black;
   border-collapse: collapse;
-  padding: 10px;
+  padding: 1rem;
   line-height: 1.2em;
+}
+
+td:nth-child(even) {
+  text-align: center;
 }
 
 tr:nth-child(odd) {
