@@ -12,9 +12,9 @@
 <body>
     <h1>Alcohol list</h1>
     <div class="alcohol-list">
-        <button>all</button>
+        <a href="/">all</a>
         <% alcoholList.forEach(function(item) { %>
-        <button><%= item %></button>
+        <a href="/?alcohol=<%= item %>"><%= item %></a>
         <% }); %>
     </div>
     <table>
@@ -40,7 +40,6 @@
         </tbody>
     </table>
 
-    <script src="../static/frontend.js"></script>
 </body>
 
 </html>
