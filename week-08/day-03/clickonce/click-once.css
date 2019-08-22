@@ -1,6 +1,5 @@
 div {
-  display: inline-block; 
-  width: 300px;
+  width: fit-content;
   margin: 20px;
   padding: 20px;
   line-height: 2em;
@@ -8,5 +7,4 @@ div {
   background-color: antiquewhite;
   font-family: Helvetica;
   text-align: justify;
-
 }
