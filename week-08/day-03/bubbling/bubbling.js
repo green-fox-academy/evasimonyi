@@ -1,10 +1,10 @@
 // Here is an image inspector, but the buttons are not implemented yet, that will
 // be your task!
 //   - the nav buttons(up, down, left, right) move the background by 10px
-//     - the zoom buttons increase / decrease the image by 20 %
-//       - attach only two event listeners to the nav element
-//         - one for navigation
-//           - one for zooming
+//   - the zoom buttons increase / decrease the image by 20 %
+//   - attach only two event listeners to the nav element
+//      - one for navigation
+//      - one for zooming
 
 const nav = document.querySelector('nav');
 const image = document.querySelector('.img-inspector');
@@ -29,7 +29,6 @@ const move = (event) => {
 nav.addEventListener('click', move);
 
 let backgroundSize = 100;
-
 const zoom = () => {
   if (event.target.dataset.direction === 'in') {
     image.setAttribute('style', `background-size: ${backgroundSize}%;`);
