@@ -1,14 +1,11 @@
-// On the click of the button,
-// Count the items in the list
-// And display the result in the result element.
+'use strict';
 
 const listElements = document.querySelectorAll('li');
 const btn = document.querySelector('button');
 const resultField = document.querySelector('.result');
 
 const countingElements = () => {
-  resultField.innerText = listElements.length;
+  resultField.innerText = `there are ${listElements.length} elements in this list`;
 }
 
 btn.addEventListener('click', countingElements);
-
