@@ -1,13 +1,13 @@
-// Create a simple HTML document with one button. 
-// If the user clicks the button it should wait 2 seconds and it should show a text under the button: 2 seconds ellapsed
+'use strict';
 
 const button = document.querySelector('button');
-const body = document.querySelector('body');
 
-button.onclick = () => {
+const changeText = () => {
   setTimeout(() => {
-    const text = document.createElement('p');
+    const text = document.createElement('span');
     text.textContent = '2 seconds ellapsed';
-    body.appendChild(text);
+    document.body.appendChild(text);
   }, 2000);
-};
+}
+
+button.addEventListener('click', changeText);
