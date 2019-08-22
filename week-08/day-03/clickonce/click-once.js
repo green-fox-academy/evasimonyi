@@ -1,3 +1,5 @@
+'use strict';
+
 const btn = document.querySelector('button');
 const body = document.querySelector('body');
 const now = new Date();
@@ -13,7 +15,6 @@ const showCurrentTime = () => {
 
 btn.addEventListener('click', showCurrentTime);
 
-
 //VERSION2
 
 const showCurrentTime = () => {
@@ -24,4 +25,3 @@ const showCurrentTime = () => {
 }
 
 btn.addEventListener('click', showCurrentTime);
-
