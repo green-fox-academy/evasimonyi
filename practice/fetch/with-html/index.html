@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fetch some jokes</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+
+        span {
+            display: inline-block;
+            margin: 1%;
+        }
+
+        button {
+            margin: 1%;
+            padding: 1%;
+            font-size: 16px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            max-width: 500px;
+        }
+
+        img {
+            margin: 0.5rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div></div>
+    <button>
+        <img src="https://media2.giphy.com/media/4Z3DdOZRTcXPa/giphy.gif" height="100" alt="button">
+        Click on this amazing button to get some more amazing jokes
+        <img src="https://media2.giphy.com/media/4Z3DdOZRTcXPa/giphy.gif" height="100" alt="button">
+    </button>
+    <script type="text/javascript">
+        const url = 'http://api.icndb.com/jokes/random';
+        const button = document.querySelector('button');
+        const divContainer = document.querySelector('div');
+
+        function attaching(result) {
+            let newSpan = document.createElement('span');
+            newSpan.textContent = result.value.joke;
+            divContainer.appendChild(newSpan);
+            divContainer.appendChild(document.createElement('br'));
+        }
+
+        function fetching() {
+            fetch(url)
+                .then(response => response.json())
+                .then(parsedResponse => attaching(parsedResponse))
+                .catch(error => console.log(error));
+        }
+
+        button.addEventListener('click', fetching);
+    </script>
+</body>
+
+</html>
