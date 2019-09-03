@@ -23,8 +23,7 @@ test('TESTING GET /groot ENDPOINT WITH QUERY', (t) => {
     .expect('Content-Type', /json/)
     .end((err, res) => {
       if (err) throw err;
-      console.log(res.body);
-      t.same(res.body, {"received": "szioka", "translated": "I am Groot!"}, 'szipiszupi');
+      t.same(res.body, { "received": "szioka", "translated": "I am Groot!" }, 'szipiszupi');
       t.end();
     });
 });
