@@ -32,4 +32,26 @@ app.get('/posts', (req, res) => {
   });
 });
 
+app.post('/posts', (req, res) => {
+  const { url, title } = req.body;
+  mySQLConnection.query('INSERT INTO posts (title, url) VALUES (?, ?);', [url, title], (err, data) => {
+    if (err === null) {
+      mySQLConnection.query('SELECT * FROM posts WHERE id = LAST_INSERT_ID();', (err, lastInsertedPost) => {
+        if (err === null) {
+          res.setHeader("Content-Type", "application/json");
+          res.status(200).json(lastInsertedPost);
+        }
+        else {
+          console.log(err);
+          res.sendStatus(500);
+        }
+      });
+    }
+    else {
+      console.log(err);
+      res.sendStatus(500);
+    }
+  });
+});
+
 app.listen(PORT, () => console.log(`App is listening on ${PORT}`));
