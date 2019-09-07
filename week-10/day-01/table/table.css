@@ -1,6 +1,9 @@
 body {
-  background-color: blue;
+  height: 100vh;
+  display: flex;
+  background-color: darkblue;
   font-family: Arial, Helvetica, sans-serif;
+  justify-content: center;
 }
 
 table {
@@ -9,15 +12,14 @@ table {
   font-size: 20px;
   color: rgb(82, 76, 76);
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 2%;
   overflow: hidden;
 }
 
 tr, td, th {
-  width: 300px;
+  min-width: 300px;
   border: 1px solid gray;
   padding: 20px;
-
 }
 
 tr, td {
@@ -40,11 +42,10 @@ tbody>tr:nth-child(2n) {
   background: white;
 }
 
-td[data-currency]::before{
+td[data-currency]::before {
   content: "$ ";
 }
 
-td[data-currency]::after{
+td[data-currency]::after {
   content: ".00";
 }
-
