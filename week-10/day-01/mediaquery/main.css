@@ -23,12 +23,12 @@ main>* {
 }
 
 @media screen and (max-width: 800px) {
-  .item {
-    display: block;
+  main {
+    flex-direction: column;
     width: 100%;
   }
-  .container {
-    flex-direction: column;
+  main>* {
+    display: block;
     width: 100%;
   }
 }
