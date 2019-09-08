@@ -29,14 +29,14 @@ finalsubmit.addEventListener('click', () => {
   postXHR.onload = () => {
     const response = JSON.parse(postXHR.responseText);
     const szeretnelkutyust = document.createElement('h1');
-    szeretnelkutyust.textContent = 
-    `szeretnel kutyust? valaszod: ${response.message.pickedAnswer}`;
+    szeretnelkutyust.textContent =
+      `szeretnel kutyust? valaszod: ${response.message.pickedAnswer}`;
     const kedvencAllataid = document.createElement('h1');
-    kedvencAllataid.textContent = 
-    `kedvenc allatod/allataid: valaszod: ${response.message.checkedArr}`;
+    kedvencAllataid.textContent =
+      `kedvenc allatod/allataid: valaszod: ${response.message.checkedArr}`;
     const favAnimal = document.createElement('h1');
-    favAnimal.textContent = 
-    `Fav animal? valaszod: ${response.message.pickedAnimal}`;
+    favAnimal.textContent =
+      `Fav animal? valaszod: ${response.message.pickedAnimal}`;
     document.body.appendChild(szeretnelkutyust);
     document.body.appendChild(kedvencAllataid);
     document.body.appendChild(favAnimal);

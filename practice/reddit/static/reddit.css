@@ -64,7 +64,7 @@ img {
   font-weight: 300;
 }
 
-section, aside {
+main, aside {
   float: left;
   width: 46%;
   margin: 1%;
@@ -72,7 +72,7 @@ section, aside {
   background-color: #f2f2f2;
 }
 
-aside>button {
+aside>a {
   width: 400px;
   height: 30px;
   background-color: mediumblue;
