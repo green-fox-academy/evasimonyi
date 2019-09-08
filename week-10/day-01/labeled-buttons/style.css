@@ -1,0 +1,97 @@
+:root {
+  --icon-height: 60px;
+  --button-width: 200px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #313841;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+main {
+  width: 400px;
+}
+
+div {
+  height: var(--icon-height, 60px);
+  display: flex;
+}
+
+button {
+  background-color: #1c242b;
+  border: hidden;
+  width: var(--icon-height, 60px);
+  height: var(--icon-height, 60px);
+  font-size: 1.2rem;
+  border-radius: 10%;
+  outline: none;
+}
+
+i {
+  color: white;
+}
+
+button+label {
+  display: none;
+  position: relative;
+}
+
+button[data-action="delete"]:hover>i {
+  color: #ed4440;
+  transition: .5s;
+}
+
+button:hover {
+  border-radius: 10% 0 0 10%;
+}
+
+button:hover+label {
+  border-radius: 0 .3rem .3rem 0;
+}
+
+button[data-action="delete"]+label {
+  background-color: #ed4440;
+}
+
+button[data-action="delete"]:hover+label {
+  width: var(--button-width, 200px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button[data-action="confirm"]:hover>i {
+  color: #54ba7d;
+  transition: .5s;
+}
+
+button[data-action="confirm"]+label {
+  background-color: #54ba7d;
+}
+
+button[data-action="confirm"]:hover+label {
+  width: var(--button-width, 200px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover+label::before {
+  content: "";
+  border-left: 10px solid #1c242b;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 0;
+}
