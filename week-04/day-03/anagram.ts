@@ -10,8 +10,6 @@ function isThisAnAnagram(word1: string, word2: string): boolean {
 	return word1.split('').sort().join('') === word2.split('').sort().join('');
 }
 
-// console.log(isThisAnAnagram('blaa', 'abal'));
-
 test('returns true if anagram', function (t: any) {
 	const actual = isThisAnAnagram('blaa', 'abal');
 	const expected = true;
