@@ -32,20 +32,19 @@ header {
   align-items: center;
   justify-content: space-between;
   height: 25%;
+  margin-bottom: 4px;
 }
 
 .notifications {
   margin: 1%;
   display: inline-block;
   height: 100%;
-  border: red 1px solid;
   width: 55%;
 }
 
 header>img {
   margin: 1%;
   display: inline-block;
-  border: red 1px solid;
   max-height: 100%;
 }
 
@@ -64,8 +63,15 @@ header>img {
 }
 
 .currently-playing {
-  height: 15%;
+  height: 25%;
+  margin-top: 4px;
 }
+
+.currently-playing>p:nth-child(1) {
+  line-height: 5.5rem;
+}
+
+.currently-playing>p:nth-child(1)>i {}
 
 .tracks {
   height: 85%;
@@ -75,21 +81,53 @@ header>img {
 p {
   margin: 0;
   text-align: start;
+  font-size: 1rem;
+  line-height: 2rem;
+  padding-left: .5rem;
 }
 
-.tracks>p:nth-child(odd) {
+.tracks>p {
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+.tracks>p:nth-child(odd), .playlist-container>p:nth-child(odd), .currently-playing>p:nth-child(even) {
   background-color: #f5f5f5;
 }
 
-.tracks>p:nth-child(even) {
+.tracks>p:nth-child(even), .playlist-container>p:nth-child(even), .currently-playing>p:nth-child(odd) {
   background-color: #eaeaea;
 }
 
 footer {
   width: 100%;
-  height: 60px;
   background-color: grey;
   color: white;
   text-align: center;
   border: black solid 1px;
+  display: flex;
+  background-color: #f0f2f3;
+}
+
+audio {
+  width: 100%;
+  display: inline-block;
+}
+
+footer>button {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  border: none;
+  outline: none;
+  background-color: #f0f2f3;
+}
+
+footer>button>img {
+  width: 15px;
+  height: 15px;
+}
+
+audio::-webkit-media-controls-play-button {
+  display: none;
 }
