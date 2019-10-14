@@ -1,6 +1,5 @@
 'use strict';
-
-export {};
+export { };
 
 // Create a program that draws a chess table like this
 //
@@ -14,10 +13,9 @@ export {};
 //  % % % %
 //
 
-let character: string = "% ";
+let character: string = '% ';
 let lineCount: number = 5;
 
-for (let i: number= 0; i < lineCount; i ++) {
-    console.log(character);
-
+for (let i: number = 0; i < lineCount; i++) {
+  console.log(character);
 }

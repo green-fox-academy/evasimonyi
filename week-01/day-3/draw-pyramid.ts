@@ -1,5 +1,4 @@
 'use strict';
-
 export { };
 
 // Write a program that draws a

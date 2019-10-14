@@ -1,14 +1,14 @@
 'use strict';
-
-export {};
+export { };
 
 let a: number = 24;
 let out: number = 0;
 
 // if a is even increment out by one
 if (a % 2 === 0) {
-    out = out + 1;
-}    
+  out = out + 1;
+}
+
 console.log(out);
 
 let b: number = 13;
@@ -17,13 +17,15 @@ let out2: string = '';
 // if b is between 10 and 20 set out2 to "Sweet!"
 // if less than 10 set out2 to "Less!",
 // if more than 20 set out2 to "More!"
-if (b>10 && b < 20) {
-    out2 = "Sweet!";
-}   else if (b < 10) {
-    out2 = "Less!";
-}   else if (b > 20) {
-    out2 = "More!";
+
+if (b > 10 && b < 20) {
+  out2 = 'Sweet!';
+} else if (b < 10) {
+  out2 = 'Less!';
+} else if (b > 20) {
+  out2 = 'More!';
 }
+
 console.log(out2);
 
 let c: number = 123;
@@ -38,15 +40,15 @@ let isBonus: boolean = false;
 // !isBonus
 
 if (credits > 50 && isBonus == false) {
-    c = c - 2;
-}   else if (credits < 50 && isBonus == false) {
-    c = c - 1;
-}   else if (isBonus) {
-    c = c;
+  c = c - 2;
+} else if (credits < 50 && isBonus == false) {
+  c = c - 1;
+} else if (isBonus) {
+  c = c;
 }
 console.log(c);
 
-let d: number =  8;
+let d: number = 8;
 let time: number = 120;
 let out3: string = '';
 
@@ -57,10 +59,11 @@ let out3: string = '';
 // set out3 to "Time out"
 // otherwise set out3 to "Run Forest Run!"
 if (d % 4 === 0 && time <= 200) {
-    out3="check";
-}   else if (time > 200) {
-    out3="Time out";
-}   else {
-    out3="Run Forest Run!";
+  out3 = 'check';
+} else if (time > 200) {
+  out3 = 'Time out';
+} else {
+  out3 = 'Run Forest Run!';
 }
+
 console.log(out3);

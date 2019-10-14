@@ -1,6 +1,6 @@
 'use strict';
 
-export {};
+export { };
 
 let a: number = 3;
 // make it bigger by 10
@@ -52,14 +52,5 @@ let j: number = 1521;
 console.log(j % 3 === 0 || j % 5 === 0);
 
 let k: string = 'Apple';
-let repeat1= 4;
 // fill the k variable with its content 4 times
-
-function repeat(k) {
-for (let i = 0; i < 4; i++) {
-    console.log(k);
-    }
-}
-repeat(k);
-
-
+console.log(k.repeat(4));

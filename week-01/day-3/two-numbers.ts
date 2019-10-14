@@ -11,4 +11,3 @@ console.log(22 * 13);
 console.log(22 / 13);
 // Print the reminder of 22 divided by 13
 console.log(22 % 13);
-

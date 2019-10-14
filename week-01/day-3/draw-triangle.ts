@@ -1,6 +1,5 @@
 'use strict';
-
-export {};
+export { };
 
 // Write a program that draws a triangle like this:
 //
@@ -15,6 +14,6 @@ let lineCount: number = 4;
 let line: string = '*';
 
 for (let i = 0; i < lineCount; i++) {
-        console.log(line);
-        line = line + '*';
+  console.log(line);
+  line = line + '*';
 }
