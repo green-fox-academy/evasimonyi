@@ -6,13 +6,20 @@
 // -  Print the elements of the reversed `numList`
 
 'use strict';
-export {};
+export { };
 
 let numList = [3, 4, 5, 6, 7];
+
+// do it with the built in method
+
+console.log(numList.reverse());
+
+// do it with creating a new temp array and a loop
+
 let reversed = [];
 
-for (let i : number = 0; i < numList.length; i++) {
-    reversed.push(numList[numList.length -1 - i]);
+for (let i: number = 0; i < numList.length; i++) {
+  reversed.push(numList[numList.length - 1 - i]);
 }
 
 console.log(reversed);

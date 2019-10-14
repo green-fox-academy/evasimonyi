@@ -6,11 +6,21 @@
 //    `"orange red", "red", "tomato"`
 // -  In `colors[2]` store the shades of pink:
 //    `"orchid", "violet", "pink", "hot pink"`
+
 'use strict';
-export {};
+export { };
 
 let colors = [["lime", "forest green", "olive", "pale green", "spring green"], ["orange red", "red", "tomato"], ["orchid", "violet", "pink", "hot pink"]];
 
-console.log(colors[0]);
-console.log(colors[1]);
-console.log(colors[2]);
+// console.log(colors[0]);
+// console.log(colors[1]);
+// console.log(colors[2]);
+
+function logTheColors(colors: string[][]) {
+  colors.forEach((colorArray) => {
+    console.log(colorArray)
+  })
+}
+
+logTheColors(colors);
+

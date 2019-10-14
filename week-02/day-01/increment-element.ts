@@ -3,10 +3,9 @@
 // -  Log the third element to the console
 
 'use strict';
-export {};
+export { };
 
 let numList = [1, 2, 3, 4, 5];
 
-console.log(numList[2] + 1);
-numList[2] +=1 
-console.log(numList);
+numList[2] += 1;
+console.log(numList[2]);

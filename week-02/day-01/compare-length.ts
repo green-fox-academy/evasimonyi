@@ -4,17 +4,15 @@
 //    with the following content: `[4, 5]`
 // -  Log to the console if `secondList` has more elements than `firstList`
 'use strict';
-export {};
+export { };
 
 let firstList = [1, 2, 3];
 let secondList = [4, 5];
 
-if (secondList.length > firstList.length){
-    console.log('secondList has more elements than firstList');
+if (secondList.length > firstList.length) {
+  console.log('secondList has more elements than firstList');
+} else if (secondList.length < firstList.length) {
+  console.log('secondList has less elements than firstList');
+} else {
+  console.log('secondList and firstList has the same amount of elements');
 }
-else if (secondList.length < firstList.length) {
-    console.log('secondList has less elements than firstList'); 
-    }
-else {
-    console.log('secondList and firstList has the same amount of elements');
-    }

@@ -4,11 +4,11 @@
 // -  Print the result of `appendAFunc(typo)`
 
 'use strict';
-export {};
+export { };
 
-var typo: string= 'Chincill';
-function appendAFunc(typo){
-    console.log(typo + 'a')
+var typo: string = 'Chincill';
+function appendAFunc(typo: string): string {
+    return typo + 'a';
 }
 
-appendAFunc(typo);
+console.log(appendAFunc(typo));

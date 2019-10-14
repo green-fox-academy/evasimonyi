@@ -3,16 +3,17 @@
 // It should print: ['GinGin', 'WhiskeyWhiskey', 'WineWine', 'BeerBeer']`
 
 'use strict';
-export {};
+export { };
 
-let drinks : string[] = ['Gin', 'Whiskey', 'Wine', 'Beer'];
+let drinks: string[] = ['Gin', 'Whiskey', 'Wine', 'Beer'];
 
-function double (doubled1: string[]): string[] {
-    var doubled: string[] = [];
-    for (let i : number = 0; i < doubled1.length; i++) {
-        doubled.push(doubled1[i] + doubled1[i]);
-    };
-    return doubled;
+function double(arrayToBeDoubled: string[]): string[] {
+  var doubled: string[] = [];
+  for (let i: number = 0; i < arrayToBeDoubled.length; i++) {
+    doubled.push(arrayToBeDoubled[i] + arrayToBeDoubled[i]);
+    // or doubled.push(arrayToBeDoubled[i].repeat(2));
+  };
+  return doubled;
 }
 
 console.log(double(drinks));

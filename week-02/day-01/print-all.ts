@@ -4,14 +4,16 @@
 // -  bonus for using the correct built in array method
 
 'use strict';
-export {};
+export { };
 
 var integers = [4, 5, 6, 7];
 
-function printEach(integers: number[]) { 
-    for (let i : number = 0; i < integers.length; i++){
-        console.log(integers[i]);
-    }
+function printEach(integers: number[]) {
+  for (let i: number = 0; i < integers.length; i++) {
+    console.log(integers[i]);
+  }
 }
 
-printEach(integers);
+// printEach(integers);
+
+integers.forEach(number => console.log(number));

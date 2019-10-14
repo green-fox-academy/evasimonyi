@@ -2,11 +2,11 @@
 // -  Swap the first and the third element of `abc`
 
 'use strict';
-export {};
+export { };
 
-var abc = ["Arthur", "Boe", "Chloe"];
+let abc = ["Arthur", "Boe", "Chloe"];
 
-var tmp = abc[0];
+let tmp = abc[0];
 abc[0] = abc[2];
 abc[2] = tmp;
 

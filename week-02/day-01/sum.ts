@@ -2,15 +2,16 @@
 // -  The function should return the result
 
 'use strict';
-export {};
+export { };
 
 let number: number = 5;
-function sum (number) {
-    let summ = 0;
-    for (let i = 0; i < number; i++){
-        summ = summ + i;      
-        };
-        return summ;   
-    }
-    
-console.log(sum (number));
+
+function sum(number: number) {
+  let summ = 0;
+  for (let i = 0; i < number; i++) {
+    summ = summ + i;
+  };
+  return summ;
+}
+
+console.log(sum(number));

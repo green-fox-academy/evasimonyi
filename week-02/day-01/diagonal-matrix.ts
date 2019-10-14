@@ -18,15 +18,14 @@ let size: number = 8;
 let matrix: number[][] = [];
 
 for (let i: number = 0; i < size; i++) {
-    matrix[i] = [];
+  matrix[i] = [];
 }
 
 for (let i: number = 0; i < size; i++) {
-    for (let k: number = 0; k < size; k++) {
-        matrix[i][k] = 0;
-        matrix[i][size - 1 - i] = 1;
-    }
+  for (let k: number = 0; k < size; k++) {
+    matrix[i][k] = 0;
+    matrix[i][size - 1 - i] = 1;
+  }
 }
-
 
 console.log(matrix);
