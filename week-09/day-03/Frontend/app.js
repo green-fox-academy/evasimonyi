@@ -72,7 +72,7 @@ app.post('/dountil/:action', (req, res) => {
       "result": sum(until)
     });
   } else {
-    res.send({ "error": "Please provide a number!" });
+    res.send({ error: "Please provide a number!" });
   }
 });
 

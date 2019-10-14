@@ -1,16 +1,16 @@
 
-const newxhr = new XMLHttpRequest();
-newxhr.open('GET', '/books');
-newxhr.onload = () => {
-  console.log(newxhr.status);
-  if (newxhr.status === 200) {
-    const res = JSON.parse(newxhr.responseText);
-    console.log(res);
-    console.log(url);
-    createTable(res);
-  }
-}
-newxhr.send();
+// const newxhr = new XMLHttpRequest();
+// newxhr.open('GET', '/books');
+// newxhr.onload = () => {
+//   console.log(newxhr.status);
+//   if (newxhr.status === 200) {
+//     const res = JSON.parse(newxhr.responseText);
+//     console.log(res);
+//     console.log(url);
+//     createTable(res);
+//   }
+// }
+// newxhr.send();
 
 const tableDiv = document.querySelector('.mytable');
 

@@ -38,6 +38,20 @@ app.get('/allquestions', (req, res) => {
   });
 });
 
+app.delete('/playlist/:id', (req, res) => {
+  connection.query('DELETE from playlist where id=?', [req.params.id], (err, rows) => {
+    if (err) {
+      console.log('Cannot log in user: ', err);
+      res.sendStatus(500);
+      return;
+    }
+    res.json(rows);
+  });
+})
+
+
+
+
 // const showRandomQuestion = 'select * from questions order by rand() limit 1;';
 
 // app.get('/showquestion', (req, res) => {
@@ -68,20 +82,27 @@ app.get('/allquestions', (req, res) => {
 const selectRandomQuestion = 'select * from questions order by rand() limit 1;';
 
 app.get('/api/game', (req, res) => {
-  mySQLConnection.query(selectRandomQuestion, (err, data) => {
+  mySQLConnection.query(selectRandomQuestion, (err, rows) => {
     if (err) {
-      console.log(err.message);
-      res.status(500).send();
-    } else {
-      getAnswerOptions(req, res, data);
+      console.log('Cannot log in user: ', err);
+      res.sendStatus(500);
+      return;
     }
+
+    if (rows.length === 0) {
+      res.render('login', { error: 'Incorrect uname or password' });
+      return;
+    }
+
+    res.cookie('logged_in', true);
+    res.redirect('/articles');
   });
 });
 
-const selectAnswerOptions = 'select * from answers where question_id=?;';
+// const selectAnswerOptions = 'select * from answers where question_id=?;';
 
 const getAnswerOptions = (req, res, data) => {
-  mySQLConnection.query(selectAnswerOptions, data[0].id, (err, answersData) => {
+  mySQLConnection.query('select * from answers where question_id=?;', data[0].id, (err, answersData) => {
     if (err) {
       console.log(err.message);
       res.status(500).send();
