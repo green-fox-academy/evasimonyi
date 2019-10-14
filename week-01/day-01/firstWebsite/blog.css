@@ -15,7 +15,7 @@ body {
   font-size: 20px;
 }
 
-.container > * {
+.container>* {
   padding-left: 10%;
   padding-right: 10%;
 }
@@ -29,15 +29,12 @@ body {
   margin-bottom: 8px;
 }
 
-.titletext,
-.posttext,
-.posts {
+.titletext, .posttext, .posts {
   border: solid 1px deeppink;
   padding: 4px;
 }
 
-.posttext,
-.posts {
+.posttext, .posts {
   width: 100%;
 }
 
