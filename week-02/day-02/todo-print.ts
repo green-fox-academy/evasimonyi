@@ -10,5 +10,8 @@
 //  - Download games
 //      - Diablo
 
-let todoText: string = ' - Buy milk\n';
-console.log("My todo:".concat('\n', todoText, " - Download games\n").concat("\t - Diablo"));
+let todoText: string = '- Buy milk\n';
+console.log('My todo:'.concat('\n', todoText, '- Download games\n').concat('\t - Diablo'));
+
+// with string template literals
+console.log(`My todos: \n ${todoText} - Download games\n \t- Diablo`);

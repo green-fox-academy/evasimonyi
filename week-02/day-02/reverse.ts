@@ -7,7 +7,7 @@ export { };
 let stringToReverse = '.eslaf eb t\'ndluow ecnetnes siht ,dehctiws erew eslaf dna eurt fo sgninaem eht fI';
 
 function reverseString1(string: string) {
-    return string.split("").reverse().join("");
+    return string.split('').reverse().join('');
 };
 
 console.log(reverseString1(stringToReverse));
