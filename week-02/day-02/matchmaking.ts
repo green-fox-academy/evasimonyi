@@ -19,4 +19,3 @@ function makingMatches(girls: string[], boys: string[]) {
 console.log(makingMatches(girls, boys));
 
 export = makingMatches;
-

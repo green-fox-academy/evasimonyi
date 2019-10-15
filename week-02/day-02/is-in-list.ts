@@ -9,11 +9,14 @@ let listOfNumbers: number[] = [2, 4, 6, 8, 10, 12, 14, 16];
 
 function checkNums(list: number[]): any {
   for (let i = 0; i < list.length; i++)
-    if (list[i] == 4 || 8 || 12 || 14 || 16) {
+    if (list[i] === 4 || 8 || 12 || 14 || 16) {
       return true;
     } else {
-      return false
+      return false;
     }
 }
 
 console.log(checkNums(listOfNumbers));
+
+// with includes()
+console.log(listOfNumbers.includes(4 || 8 || 12 || 16));
