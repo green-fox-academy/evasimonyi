@@ -6,9 +6,10 @@ export { };
 // Expected ouput: In a galaxy far far away
 
 // this way if there is multiple 'diswasher'-s, all of them gets replaced
-let x: any = /dishwasher/gi;
+let x: any = /dishwasher/gi; // case insensitive
+let y: any = /dishwasher/g;
 let firstExample: string = 'In a dishwasher far far away dishwasher';
-console.log(firstExample.replace(x, 'galaxy'));
+console.log(firstExample.replace(y, 'galaxy'));
 
 // this way if there is multiple 'diswasher'-s, only the first occurence gets replaced
 let dishwasher = 'dishwasher';
