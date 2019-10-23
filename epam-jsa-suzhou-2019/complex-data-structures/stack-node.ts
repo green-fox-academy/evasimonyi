@@ -9,7 +9,7 @@ interface Stack {
   pop(): string;
 }
 
-class Stack implements Stack {
+export default class StackForStack implements Stack {
   stack: MyNode[];
 
   constructor() {
