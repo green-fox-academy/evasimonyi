@@ -9,29 +9,29 @@ interface Stack {
   pop(): string;
 }
 
-class Stack {
+export class StackClass implements Stack {
   items: string[];
 
   constructor() {
     this.items = [];
   }
 
-  empty() {
+  empty(): boolean {
     return this.items.length === 0;
   }
 
-  peek() {
+  peek(): string {
     if (!this.empty()) return this.items[this.items.length - 1];
-    return null;
+    return 'no element in this stack';
   }
 
-  push(element: string) {
+  push(element: string): void {
     this.items.push(element);
   }
 
-  pop() {
-    if (!this.empty()) return this.items.pop();
-    return null;
+  pop(): string {
+    if (!this.empty()) return this.items.pop()!;
+    return 'no element in this stack';
   }
 }
 
@@ -44,28 +44,32 @@ interface Queue {
   remove(): string;
 }
 
-class Queue {
+export class QueueClass implements Queue {
   items: string[];
 
   constructor() {
     this.items = [];
   }
 
-  empty() {
+  empty(): boolean {
     return this.items.length === 0;
   }
 
-  peek() {
+  peek(): string {
     if (!this.empty()) return this.items[this.items.length - 1];
-    return null;
+    return 'no element in this stack';
   }
 
-  add(element: string) {
+  add(element: string): void {
     this.items.push(element);
   }
 
-  remove() {
-    if (!this.empty()) return this.items.shift();
-    return null;
+  remove(): string {
+    if (!this.empty()) {
+      let firstElement = this.items[0];
+      this.items.shift();
+      return `${firstElement} is removed from queue`
+    };
+    return 'no element in this stack';
   }
 }
