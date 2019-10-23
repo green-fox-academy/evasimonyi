@@ -27,7 +27,7 @@ export default class MyNode {
   }
 }
 
-class LinkedList implements LinkedList {
+export class LinkedListClass implements LinkedList {
   head: null | MyNode;
   tail: null | MyNode;
   list: MyNode[];
@@ -40,16 +40,22 @@ class LinkedList implements LinkedList {
 
   add(value: string, index?: number): void {
     let newNode: MyNode = new MyNode(value);
-    if (!this.head) {
+    if (this.list.length === 0) {
       this.list.push(newNode);
       this.head = newNode;
     } else if (index) {
+      if (index === 0) { // inserting it before the current head, in this case newNode will be the new head
+        newNode.next = this.head;
+        this.head = newNode;
+      }
       this.list.splice(index, 0, newNode);
       newNode.prev = this.list[this.list.indexOf(newNode) - 1];
       newNode.next = this.list[this.list.indexOf(newNode) + 1];
-    } else {
+    } else { // in case of no provided index parameter just push the new node to the end of the array
       this.list.push(newNode);
-      if (this.list.length === 2) {
+      if (this.list.length === 2 && this.head) {
+        // 'this.head' shouldn't be needed but without it I get an error which I couldn't solve yet:
+        // Object is possibly null in next line
         this.head.next = newNode;
         newNode.prev = this.head;
       } else {
