@@ -15,7 +15,7 @@ interface LinkedList {
 
 // Doubly Linked List implementation with own class
 
-class MyNode {
+export default class MyNode {
   value: string;
   next: null | MyNode;
   prev: null | MyNode;
@@ -27,7 +27,7 @@ class MyNode {
   }
 }
 
-class LinkedList {
+class LinkedList implements LinkedList {
   head: null | MyNode;
   tail: null | MyNode;
   list: MyNode[];
