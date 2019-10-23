@@ -30,59 +30,37 @@ export default class MyNode {
 export class LinkedListClass implements LinkedList {
   head: null | MyNode;
   tail: null | MyNode;
-  list: MyNode[];
+  lengthOfList: number;
 
   constructor() {
     this.head = null;
     this.tail = null;
-    this.list = [];
+    this.lengthOfList = 0;
   }
 
   add(value: string, index?: number): void {
     let newNode: MyNode = new MyNode(value);
-    if (this.list.length === 0) {
-      this.list.push(newNode);
+    let current;
+    if (this.head === null) {
       this.head = newNode;
-    } else if (index) {
-      if (index === 0) { // inserting it before the current head, in this case newNode will be the new head
-        newNode.next = this.head;
-        this.head = newNode;
+    } else if (index && index < this.lengthOfList) {
+      // index?
+      current = this.head;
+      while (current.next) {
+        current = current.next;
       }
-      this.list.splice(index, 0, newNode);
-      newNode.prev = this.list[this.list.indexOf(newNode) - 1];
-      newNode.next = this.list[this.list.indexOf(newNode) + 1];
-    } else { // in case of no provided index parameter just push the new node to the end of the array
-      this.list.push(newNode);
-      if (this.list.length === 2 && this.head) {
-        // 'this.head' shouldn't be needed but without it I get an error which I couldn't solve yet:
-        // Object is possibly null in next line
-        this.head.next = newNode;
-        newNode.prev = this.head;
-      } else {
-        newNode.prev = this.list[this.list.indexOf(newNode) - 1];
-      }
-      this.tail = newNode;
+      current = newNode;
     }
+    this.lengthOfList++;
   }
 
-  get(index: number): string {
-    return this.list[index].value;
-  }
-
-  removeItem(value: string): void {
-    this.list.forEach((element) => {
-      if (element.value === value) {
-        this.list.splice(this.list.indexOf(element), 1);
-      }
-    })
-  }
-
-  remove(index: number): string {
-    this.list.splice(index, 1);
-    return this.list[index].value;
-  }
+  get(index: number): string { }
+  removeItem(value: string): void { }
+  remove(index: number): string { }
 
   size(): number {
-    return this.list.length;
+    return this.lengthOfList;
   }
+
 }
+
