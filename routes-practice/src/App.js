@@ -4,7 +4,6 @@ import { Route, Switch } from 'react-router-dom';
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
-import Header from './components/header'
 import Navbar from './components/navbar'
 
 class App extends Component {
@@ -14,7 +13,6 @@ class App extends Component {
         {/* this is outside of the switch so it will be rendered on every route */}
         <Route render={props => (
           <React.Fragment>
-            <Header title="THIS IS MY VERY ORIGINAL BLOGSITE" />
             <Navbar />
           </React.Fragment>
         )}
