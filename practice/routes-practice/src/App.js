@@ -11,12 +11,7 @@ class App extends Component {
     return (
       <React.Fragment>
         {/* this is outside of the switch so it will be rendered on every route */}
-        <Route render={props => (
-          <React.Fragment>
-            <Navbar />
-          </React.Fragment>
-        )}
-        />
+        <Navbar />
 
         <Switch>
           <Route exact path="/"
