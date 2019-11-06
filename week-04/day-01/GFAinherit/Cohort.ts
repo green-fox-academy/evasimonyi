@@ -30,3 +30,10 @@ export class Cohort {
 }
 
 export default Cohort;
+
+let newCohort = new Cohort('haho');
+let newMentor = new Mentor('haho');
+let newStudent = new Student('haho');
+console.log(newCohort);
+console.log(newMentor);
+console.log(newStudent);

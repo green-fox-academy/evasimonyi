@@ -22,7 +22,7 @@ class App extends Component {
           <Route exact path="/"
             render={props => <HomePage />}
           />
-          <Route exact path="/about"
+          <Route exact path="/about/:id?"
             render={props => <AboutPage />}
           />
           <Route exact path="/contact"
