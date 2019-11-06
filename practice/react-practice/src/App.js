@@ -1,7 +1,8 @@
 import React from 'react';
 
-import Header from './components/header'
-import Filter from './components/filter-container'
+import Header from './components/header';
+import Filter from './components/filter-container';
+import Hotel from './components/hotel';
 
 function App() {
   let data = {
@@ -44,6 +45,7 @@ function App() {
       <Filter heading="Rating" list={data.filters["Star rating"]} />
       <Filter heading="Property type" list={data.filters["Property type"]} />
       <Header headerText="Hotel list" />
+      <Hotel list={data.hotels} />
     </React.Fragment>
   );
 }
