@@ -11,6 +11,7 @@ function Filter(props) {
     },
     container: {
       width: '20%',
+      height: 'max-content',
       padding: '1rem',
       border: '1px solid black',
       margin: '1rem',

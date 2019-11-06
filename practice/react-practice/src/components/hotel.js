@@ -11,9 +11,11 @@ function Hotel(props) {
     },
     container: {
       display: 'flex',
+      flexWrap: 'wrap',
       padding: '1rem',
       border: '1px solid black',
       margin: '1rem',
+      width: '50%',
     },
     heading: {
       fontSize: '14px',
@@ -21,7 +23,13 @@ function Hotel(props) {
       margin: '.3rem',
     },
     hotel: {
-      display: 'block'
+      backgroundColor: 'azure',
+      // display: 'inline-block',
+    },
+    img: {
+      display: 'inline-block',
+      height: '100px',
+      width: '60px',
     }
   }
 
@@ -29,11 +37,13 @@ function Hotel(props) {
     <div style={styles.container}>
       {props.list.map(element => {
         return (
-          <div style={styles.hotel}>
+          <>
             <h1 style={styles.heading}>{element.name}</h1>
-            <img src={element.imageURL} alt={element.name} />
-            <p style={styles.p}>{element.description}</p>
-          </div>
+            <div style={styles.hotel}>
+              <img src={element.imageURL} alt={element.name} style={styles.img} />
+              <p style={styles.p}>{element.description}</p>
+            </div>
+          </>
         )
       })}
     </div>

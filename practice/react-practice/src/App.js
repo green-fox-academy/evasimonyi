@@ -5,6 +5,14 @@ import Filter from './components/filter-container';
 import Hotel from './components/hotel';
 
 function App() {
+
+  const styles = {
+    main: {
+      display: 'flex',
+      justifyContent: 'space-around',
+    },
+  }
+
   let data = {
     filters: {
       'Star rating': [
@@ -42,10 +50,12 @@ function App() {
   return (
     <React.Fragment>
       <Header headerText="Hotel Booking" />
-      <Filter heading="Rating" list={data.filters["Star rating"]} />
-      <Filter heading="Property type" list={data.filters["Property type"]} />
       <Header headerText="Hotel list" />
-      <Hotel list={data.hotels} />
+      <main style={styles.main}>
+        <Filter heading="Rating" list={data.filters["Star rating"]} />
+        <Filter heading="Property type" list={data.filters["Property type"]} />
+        <Hotel list={data.hotels} />
+      </main>
     </React.Fragment>
   );
 }
