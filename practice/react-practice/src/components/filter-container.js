@@ -28,9 +28,12 @@ function Filter(props) {
       {props.list.map(element => {
         return (
           <span style={styles.span}>
-            <input type="checkbox" name={element} id={element} />
+            {element.checked
+              ? <input type="checkbox" name={element} id={element} checked />
+              : <input type="checkbox" name={element} id={element} />
+            }
             <label for={element} style={styles.label}>
-              {element}
+              {element.name}
             </label>
           </span>
         )
