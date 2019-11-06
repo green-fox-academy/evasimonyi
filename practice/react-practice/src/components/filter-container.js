@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Rating(props) {
+function Filter(props) {
 
   const styles = {
     label: {
@@ -9,10 +9,11 @@ function Rating(props) {
     span: {
       display: 'block',
     },
-    ratingContainer: {
+    container: {
       width: '20%',
       padding: '1rem',
       border: '1px solid black',
+      margin: '1rem',
     },
     heading: {
       fontSize: '14px',
@@ -20,19 +21,16 @@ function Rating(props) {
       margin: '.3rem',
     }
   }
-  const ratings = [];
-  for (let i = 1; i < 6; i++) {
-    ratings.push(i);
-  }
+
   return (
-    <aside style={styles.ratingContainer}>
-      <h1 style={styles.heading}>Star rating</h1>
-      {ratings.map((element, index) => {
+    <aside style={styles.container}>
+      <h1 style={styles.heading}>{props.heading}</h1>
+      {props.list.map(element => {
         return (
           <span style={styles.span}>
             <input type="checkbox" name={element} id={element} />
             <label for={element} style={styles.label}>
-              {element} {index === 0 ? `star` : `stars`}
+              {element}
             </label>
           </span>
         )
@@ -41,4 +39,4 @@ function Rating(props) {
   );
 }
 
-export default Rating;
+export default Filter;
