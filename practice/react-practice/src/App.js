@@ -11,6 +11,10 @@ function App() {
       display: 'flex',
       justifyContent: 'space-around',
     },
+    checkboxContainer: {
+      display: 'block',
+      flexWrap: 'wrap',
+    }
   }
 
   let data = {
@@ -52,8 +56,8 @@ function App() {
       <Header headerText="Hotel Booking" />
       <Header headerText="Hotel list" />
       <main style={styles.main}>
-        <Filter heading="Rating" list={data.filters["Star rating"]} />
-        <Filter heading="Property type" list={data.filters["Property type"]} />
+        <Filter heading="Rating" list={data.filters["Star rating"]} style={styles.checkboxContainer} />
+        <Filter heading="Property type" list={data.filters["Property type"]} style={styles.checkboxContainer} />
         <Hotel list={data.hotels} />
       </main>
     </React.Fragment>

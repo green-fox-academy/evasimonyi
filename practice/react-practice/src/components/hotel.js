@@ -24,7 +24,6 @@ function Hotel(props) {
     },
     hotel: {
       backgroundColor: 'azure',
-      // display: 'inline-block',
     },
     img: {
       display: 'inline-block',
