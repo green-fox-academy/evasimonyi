@@ -3,26 +3,26 @@ import Button from './Button';
 import { connect } from 'react-redux';
 import { increaseCounter, decreaseCounter } from '../actions';
 
-function Counter({ counter, increaseCounter, decreaseCounter }) {
+function Counter({ counter, increase, decrease }) {
   return (
     <>
-      <Button text="increase" onClick={increaseCounter} />
+      <Button text="increase" onClick={increase} />
       <span>{counter}</span>
-      <Button text="decrease" onClick={decreaseCounter} />
+      <Button text="decrease" onClick={decrease} />
     </>
   );
 }
 
 const mapStateToProps = store => {
   return {
-    counter: store.counter,
+    counter: store,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    increaseCounter: () => { dispatch(increaseCounter()) },
-    decreaseCounter: () => { dispatch(decreaseCounter()) },
+    increase: () => dispatch(increaseCounter()),
+    decrease: () => dispatch(decreaseCounter()),
   };
 }
 
