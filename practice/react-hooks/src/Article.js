@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import Loader from './loader';
+import Loader from './Loader';
+import fetchArticles from './fetch';
 
 const API_KEY = '6138eaac2a634e919413c553b31f8cb6';
 const URL = 'https://newsapi.org/v2/everything?q=bitcoin&from=2019-10-13&sortBy=publishedAt&apiKey=';
-const DELAYED_URL = `http://slowwy.greenfox.academy/delay/2000/url/${URL}${API_KEY}`;
+const DELAYED_URL = `http://slowwy.greenfox.academy/delay/1000/url/${URL}${API_KEY}`;
 
 export default function Article() {
 
   const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const afterFetch = (response) => {
+    setArticles(response.articles);
+    setIsLoading(false);
+  }
 
   useEffect(() => {
-    setLoading(true);
-    fetch(DELAYED_URL)
-      .then(res => res.json())
-      .then(response => {
-        setArticles(response.articles);
-        setLoading(false);
-      })
-      .catch(error => console.log(error))
+    setIsLoading(true);
+    fetchArticles(DELAYED_URL, afterFetch)
   }, []);
 
-  if (loading) {
+  if (isLoading) {
     return <Loader />;
   } else {
     return (
